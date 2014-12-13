@@ -50,35 +50,6 @@
                                     <action selector="signInPressed:" destination="r7y-Gs-61A" eventType="touchUpInside" id="Kq2-Kj-VM9"/>
                                 </connections>
                             </button>
-                            <view contentMode="scaleToFill" id="Ut4-RB-iLe" userLabel="LoginView">
-                                <rect key="frame" x="0.0" y="362" width="320" height="206"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <subviews>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" minimumFontSize="17" id="C2D-2c-n6j">
-                                        <rect key="frame" x="0.0" y="42" width="320" height="30"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
-                                    </textField>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" minimumFontSize="17" id="xth-fu-wf7">
-                                        <rect key="frame" x="0.0" y="88" width="320" height="30"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
-                                    </textField>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="eaQ-7N-qtw">
-                                        <rect key="frame" x="10" y="131" width="300" height="44"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMinY="YES"/>
-                                        <state key="normal" title="Login">
-                                            <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="signInPressed:" destination="r7y-Gs-61A" eventType="touchUpInside" id="rBS-50-T7N"/>
-                                        </connections>
-                                    </button>
-                                </subviews>
-                                <color key="backgroundColor" cocoaTouchSystemColor="tableCellGroupedBackgroundColor"/>
-                            </view>
                             <view contentMode="scaleToFill" id="WQy-PZ-rHv" userLabel="SignUpView">
                                 <rect key="frame" x="0.0" y="96" width="320" height="206"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -92,8 +63,8 @@
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="KDi-HY-wLe">
                                         <rect key="frame" x="10" y="131" width="300" height="44"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMinY="YES"/>
-                                        <state key="normal" title="Register Account">
-                                            <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <state key="normal" title="Register Account" backgroundImage="login&amp;signup.png">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <connections>
                                             <action selector="signInPressed:" destination="r7y-Gs-61A" eventType="touchUpInside" id="P4J-51-WWF"/>
@@ -113,7 +84,6 @@
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
-                        <outlet property="_viewSignIn" destination="Ut4-RB-iLe" id="utZ-yN-Lkl"/>
                         <outlet property="_viewSignUp" destination="WQy-PZ-rHv" id="sJj-lp-aW3"/>
                         <outlet property="btnSignIn" destination="3NG-56-3ey" id="c8d-hz-BGD"/>
                         <outlet property="btnSignInFacebook" destination="Jpi-Fr-hJa" id="hk3-Vb-T5V"/>

@@ -111,4 +111,209 @@
 }
 
 
+#pragma mark - User
+- (void) userLogin:(NSString *)email password:(NSString *)password success:(void (^)(ResponseObject *responseObject))blockSuccess failure:(void (^)(ResponseObject *failureObject))blockFailure {
+    
+    NSString *path = kLinkUserLogin;
+    
+    NSMutableDictionary *params = [NSMutableDictionary dictionary];
+    
+    _setObjectToDictionary(params, @"account", email);
+    _setObjectToDictionary(params, @"password", password);
+    _setObjectToDictionary(params, @"device_id", UNIQUEIDENTIFIER_FOR_VENDOR);
+    
+    [self postPath:path parameters:params success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        [self processOperation:operation withData:responseObject success:blockSuccess failure:blockFailure];
+        
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        [self processOperation:operation withData:nil success:blockSuccess failure:blockFailure];
+    }];
+    
+}
+- (void) userFaceBookLogin:(NSString *)email fbId:(NSString *)fbId deviceId:(NSString *)deviceId success:(void (^)(ResponseObject *responseObject))blockSuccess failure:(void (^)(ResponseObject *failureObject))blockFailure {
+    
+    NSString *path = kLinkUserFacebookLogin;
+    
+    NSMutableDictionary *params = [NSMutableDictionary dictionary];
+    
+    _setObjectToDictionary(params, @"email", email);
+    _setObjectToDictionary(params, @"fbid", fbId);
+    _setObjectToDictionary(params, @"device_id", deviceId);
+    
+    [self postPath:path parameters:params success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        [self processOperation:operation withData:responseObject success:blockSuccess failure:blockFailure];
+        
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        [self processOperation:operation withData:nil success:blockSuccess failure:blockFailure];
+    }];
+
+    
+}
+- (void)userSignUp:(NSString *)email password:(NSString *)password deviceId:(NSString *)deviceId success:(void (^)(ResponseObject *responseObject))blockSuccess failure:(void (^)(ResponseObject *failureObject))blockFailure {
+    
+    NSString *path = kLinkUserSignUp;
+    
+    NSMutableDictionary *params = [NSMutableDictionary dictionary];
+    
+    _setObjectToDictionary(params, @"email", email);
+    _setObjectToDictionary(params, @"password", password);
+    _setObjectToDictionary(params, @"device_id", deviceId);
+    
+    [self postPath:path parameters:params success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        [self processOperation:operation withData:responseObject success:blockSuccess failure:blockFailure];
+        
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        [self processOperation:operation withData:nil success:blockSuccess failure:blockFailure];
+    }];
+    
+}
+- (void)userSignUpFacebook:(NSString *)email fbId:(NSString *)fbId deviceId:(NSString *)deviceId success:(void (^)(ResponseObject *responseObject))blockSuccess failure:(void (^)(ResponseObject *failureObject))blockFailure {
+    
+    NSString *path = kLinkUserSignUpFacebook;
+    
+    NSMutableDictionary *params = [NSMutableDictionary dictionary];
+    
+    _setObjectToDictionary(params, @"email", email);
+    _setObjectToDictionary(params, @"fbid", fbId);
+    _setObjectToDictionary(params, @"device_id", deviceId);
+    
+    [self postPath:path parameters:params success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        [self processOperation:operation withData:responseObject success:blockSuccess failure:blockFailure];
+        
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        [self processOperation:operation withData:nil success:blockSuccess failure:blockFailure];
+    }];
+}
+- (void)userLogOut:(NSString *)uID deviceId:(NSString *)deviceId success:(void (^)(ResponseObject *responseObject))blockSuccess failure:(void (^)(ResponseObject *failureObject))blockFailure {
+    
+    NSString *path = kLinkUserLogout;
+    
+    NSMutableDictionary *params = [NSMutableDictionary dictionary];
+    
+    _setObjectToDictionary(params, @"uid", uID);
+    _setObjectToDictionary(params, @"device_id", deviceId);
+    
+    [self postPath:path parameters:params success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        [self processOperation:operation withData:responseObject success:blockSuccess failure:blockFailure];
+        
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        [self processOperation:operation withData:nil success:blockSuccess failure:blockFailure];
+    }];
+}
+- (void)registerDevice:(NSString *)deviceId typeID:(NSString *)typeID regID:(NSString *)regID success:(void (^)(ResponseObject *responseObject))blockSuccess failure:(void (^)(ResponseObject *failureObject))blockFailure {
+    
+    NSString *path = KLinkRegisterDevice;
+    
+    NSMutableDictionary *params = [NSMutableDictionary dictionary];
+    
+    _setObjectToDictionary(params, @"device_id", deviceId);
+     _setObjectToDictionary(params, @"dtype_id", typeID);
+     _setObjectToDictionary(params, @"reg_id", regID);
+    
+    [self postPath:path parameters:params success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        [self processOperation:operation withData:responseObject success:blockSuccess failure:blockFailure];
+        
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        [self processOperation:operation withData:nil success:blockSuccess failure:blockFailure];
+    }];
+}
+
+#pragma mark - Note
+- (void)createNewNote:(NSString *)uID nameNote:(NSString *)nameNote success:(void (^)(ResponseObject *responseObject))blockSuccess failure:(void (^)(ResponseObject *failureObject))blockFailure {
+    
+    NSString *path = kLinkNoteCreateNote;
+    
+    NSMutableDictionary *params = [NSMutableDictionary dictionary];
+    
+    _setObjectToDictionary(params, @"uid", uID);
+    _setObjectToDictionary(params, @"name", nameNote);
+    
+    [self postPath:path parameters:params success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        [self processOperation:operation withData:responseObject success:blockSuccess failure:blockFailure];
+        
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        [self processOperation:operation withData:nil success:blockSuccess failure:blockFailure];
+    }];
+    
+}
+- (void)createNewNoteSub:(NSString *)uID noteID:(NSString *)noteID nameNoteSub:(NSString *)nameNoteSub success:(void (^)(ResponseObject *responseObject))blockSuccess failure:(void (^)(ResponseObject *failureObject))blockFailure {
+    
+    NSString *path = kLinkNoteCreateNoteSub;
+    
+    NSMutableDictionary *params = [NSMutableDictionary dictionary];
+    
+    _setObjectToDictionary(params, @"uid", uID);
+    _setObjectToDictionary(params, @"note_id", noteID);
+    _setObjectToDictionary(params, @"name", nameNoteSub);
+    
+    [self postPath:path parameters:params success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        [self processOperation:operation withData:responseObject success:blockSuccess failure:blockFailure];
+        
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        [self processOperation:operation withData:nil success:blockSuccess failure:blockFailure];
+    }];
+}
+- (void)getListNote:(NSString *)uID success:(void (^)(ResponseObject *responseObject))blockSuccess failure:(void (^)(ResponseObject *failureObject))blockFailure {
+    
+    NSString *path = kLinkNoteGetListNote;
+    
+    NSMutableDictionary *params = [NSMutableDictionary dictionary];
+    
+    _setObjectToDictionary(params, @"uid", uID);
+    
+    [self postPath:path parameters:params success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        [self processOperation:operation withData:responseObject success:blockSuccess failure:blockFailure];
+        
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        [self processOperation:operation withData:nil success:blockSuccess failure:blockFailure];
+    }];
+}
+- (void)getListNoteSub:(NSString *)uID noteID:(NSString *)noteID success:(void (^)(ResponseObject *responseObject))blockSuccess failure:(void (^)(ResponseObject *failureObject))blockFailure {
+    
+    NSString *path = kLinkNoteGetListNoteSub;
+    
+    NSMutableDictionary *params = [NSMutableDictionary dictionary];
+    
+    _setObjectToDictionary(params, @"uid", uID);
+    _setObjectToDictionary(params, @"note_id", noteID);
+    
+    [self postPath:path parameters:params success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        [self processOperation:operation withData:responseObject success:blockSuccess failure:blockFailure];
+        
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        [self processOperation:operation withData:nil success:blockSuccess failure:blockFailure];
+    }];
+}
+- (void)deleteNote:(NSString *)uID noteID:(NSString *)noteID success:(void (^)(ResponseObject *responseObject))blockSuccess failure:(void (^)(ResponseObject *failureObject))blockFailure {
+    
+    NSString *path = kLinkNoteGetListNoteSub;
+    
+    NSMutableDictionary *params = [NSMutableDictionary dictionary];
+    
+    _setObjectToDictionary(params, @"uid", uID);
+    _setObjectToDictionary(params, @"note_id", noteID);
+    
+    [self postPath:path parameters:params success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        [self processOperation:operation withData:responseObject success:blockSuccess failure:blockFailure];
+        
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        [self processOperation:operation withData:nil success:blockSuccess failure:blockFailure];
+    }];
+}
+- (void)deleteNoteSub:(NSString *)uID noteSubID:(NSString *)noteSubID success:(void (^)(ResponseObject *responseObject))blockSuccess failure:(void (^)(ResponseObject *failureObject))blockFailure {
+    
+    NSString *path = kLinkNoteGetListNoteSub;
+    
+    NSMutableDictionary *params = [NSMutableDictionary dictionary];
+    
+    _setObjectToDictionary(params, @"uid", uID);
+    _setObjectToDictionary(params, @"id", noteSubID);
+    
+    [self postPath:path parameters:params success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        [self processOperation:operation withData:responseObject success:blockSuccess failure:blockFailure];
+        
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        [self processOperation:operation withData:nil success:blockSuccess failure:blockFailure];
+    }];
+}
 @end

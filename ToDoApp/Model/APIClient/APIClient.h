@@ -40,15 +40,19 @@
 + (APIClient *) sharedClient;
 
 
-//Drug Service
-/*
+#pragma mark - User
+- (void) userLogin:(NSString *)email password:(NSString *)password success:(void (^)(ResponseObject *responseObject))blockSuccess failure:(void (^)(ResponseObject *failureObject))blockFailure;
+- (void) userFaceBookLogin:(NSString *)email fbId:(NSString *)fbId deviceId:(NSString *)deviceId success:(void (^)(ResponseObject *responseObject))blockSuccess failure:(void (^)(ResponseObject *failureObject))blockFailure;
+- (void)userSignUp:(NSString *)email password:(NSString *)password deviceId:(NSString *)deviceId success:(void (^)(ResponseObject *responseObject))blockSuccess failure:(void (^)(ResponseObject *failureObject))blockFailure;
+- (void)userSignUpFacebook:(NSString *)email fbId:(NSString *)fbId deviceId:(NSString *)deviceId success:(void (^)(ResponseObject *responseObject))blockSuccess failure:(void (^)(ResponseObject *failureObject))blockFailure;
+- (void)userLogOut:(NSString *)uID deviceId:(NSString *)deviceId success:(void (^)(ResponseObject *responseObject))blockSuccess failure:(void (^)(ResponseObject *failureObject))blockFailure;
+- (void)registerDevice:(NSString *)deviceId typeID:(NSString *)typeID regID:(NSString *)regID success:(void (^)(ResponseObject *responseObject))blockSuccess failure:(void (^)(ResponseObject *failureObject))blockFailure;
 
-- (void)allDrugForNric:(NSString *)nric success:(void (^)(ResponseObject *responseObject))blockSuccess failure:(void (^)(ResponseObject *failureObject))blockFailure;
-
-- (void)addDrugWithName:(NSString *)name forNric:(NSString *)nric success:(void (^)(ResponseObject *responseObject))blockSuccess failure:(void (^)(ResponseObject *failureObject))blockFailure;
-
-- (void)editDrug:(NSString *)ids name:(NSString *)name forNric:(NSString *)nric success:(void (^)(ResponseObject *responseObject))blockSuccess failure:(void (^)(ResponseObject *failureObject))blockFailure;
-
-- (void)deleteDrug:(NSString *)ids forNric:(NSString *)nric success:(void (^)(ResponseObject *responseObject))blockSuccess failure:(void (^)(ResponseObject *failureObject))blockFailure;
-*/
+#pragma mark - Note
+- (void)createNewNote:(NSString *)uID nameNote:(NSString *)nameNote success:(void (^)(ResponseObject *responseObject))blockSuccess failure:(void (^)(ResponseObject *failureObject))blockFailure;
+- (void)createNewNoteSub:(NSString *)uID noteID:(NSString *)noteID nameNoteSub:(NSString *)nameNoteSub success:(void (^)(ResponseObject *responseObject))blockSuccess failure:(void (^)(ResponseObject *failureObject))blockFailure;
+- (void)getListNote:(NSString *)uID success:(void (^)(ResponseObject *responseObject))blockSuccess failure:(void (^)(ResponseObject *failureObject))blockFailure;
+- (void)getListNoteSub:(NSString *)uID noteID:(NSString *)noteID success:(void (^)(ResponseObject *responseObject))blockSuccess failure:(void (^)(ResponseObject *failureObject))blockFailure;
+- (void)deleteNote:(NSString *)uID noteID:(NSString *)noteID success:(void (^)(ResponseObject *responseObject))blockSuccess failure:(void (^)(ResponseObject *failureObject))blockFailure;
+- (void)deleteNoteSub:(NSString *)uID noteSubID:(NSString *)noteSubID success:(void (^)(ResponseObject *responseObject))blockSuccess failure:(void (^)(ResponseObject *failureObject))blockFailure;
 @end
