@@ -18,30 +18,104 @@
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="Jpi-Fr-hJa">
-                                <rect key="frame" x="20" y="443" width="280" height="44"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES"/>
-                                <state key="normal" backgroundImage="LoginWithFB.png">
+                                <rect key="frame" x="24" y="437" width="280" height="51"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinY="YES"/>
+                                <state key="normal" title="Login with FaceBook" backgroundImage="facebook_big.png">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="signInWithFaceBookPressed:" destination="r7y-Gs-61A" eventType="touchUpInside" id="7Re-gk-CPu"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="ufr-f9-dYF">
-                                <rect key="frame" x="167" y="505" width="127" height="40"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES"/>
-                                <state key="normal" backgroundImage="SignUpButton.png">
+                                <rect key="frame" x="170" y="496" width="134" height="40"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinY="YES"/>
+                                <state key="normal" title="Sign In" backgroundImage="login&amp;signup.png">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="signUpPressed:" destination="r7y-Gs-61A" eventType="touchUpInside" id="jn5-3p-tUg"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="3NG-56-3ey">
-                                <rect key="frame" x="26" y="505" width="133" height="40"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <state key="normal" backgroundImage="LoginButton.png">
+                                <rect key="frame" x="24" y="496" width="138" height="40"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinY="YES"/>
+                                <state key="normal" title="Sign Up" backgroundImage="login&amp;signup.png">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="signInPressed:" destination="r7y-Gs-61A" eventType="touchUpInside" id="Kq2-Kj-VM9"/>
+                                </connections>
                             </button>
+                            <view contentMode="scaleToFill" id="Ut4-RB-iLe" userLabel="LoginView">
+                                <rect key="frame" x="0.0" y="362" width="320" height="206"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" minimumFontSize="17" id="C2D-2c-n6j">
+                                        <rect key="frame" x="0.0" y="42" width="320" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" minimumFontSize="17" id="xth-fu-wf7">
+                                        <rect key="frame" x="0.0" y="88" width="320" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="eaQ-7N-qtw">
+                                        <rect key="frame" x="10" y="131" width="300" height="44"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMinY="YES"/>
+                                        <state key="normal" title="Login">
+                                            <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="signInPressed:" destination="r7y-Gs-61A" eventType="touchUpInside" id="rBS-50-T7N"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" cocoaTouchSystemColor="tableCellGroupedBackgroundColor"/>
+                            </view>
+                            <view contentMode="scaleToFill" id="WQy-PZ-rHv" userLabel="SignUpView">
+                                <rect key="frame" x="0.0" y="96" width="320" height="206"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Create password" minimumFontSize="17" id="BIZ-UL-tKr">
+                                        <rect key="frame" x="0.0" y="88" width="320" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="KDi-HY-wLe">
+                                        <rect key="frame" x="10" y="131" width="300" height="44"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMinY="YES"/>
+                                        <state key="normal" title="Register Account">
+                                            <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="signInPressed:" destination="r7y-Gs-61A" eventType="touchUpInside" id="P4J-51-WWF"/>
+                                        </connections>
+                                    </button>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" minimumFontSize="17" id="JSQ-yc-KBq">
+                                        <rect key="frame" x="0.0" y="42" width="320" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                </subviews>
+                                <color key="backgroundColor" cocoaTouchSystemColor="tableCellGroupedBackgroundColor"/>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                    <connections>
+                        <outlet property="_viewSignIn" destination="Ut4-RB-iLe" id="utZ-yN-Lkl"/>
+                        <outlet property="_viewSignUp" destination="WQy-PZ-rHv" id="sJj-lp-aW3"/>
+                        <outlet property="btnSignIn" destination="3NG-56-3ey" id="c8d-hz-BGD"/>
+                        <outlet property="btnSignInFacebook" destination="Jpi-Fr-hJa" id="hk3-Vb-T5V"/>
+                        <outlet property="btnSignUp" destination="ufr-f9-dYF" id="86n-Qg-KLr"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="s1r-iw-bVD" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -72,12 +146,12 @@
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <subviews>
                                                         <view contentMode="scaleToFill" id="1iE-AQ-YPI" customClass="GradientBackground">
-                                                            <rect key="frame" x="0.0" y="0.0" width="320" height="76"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="320" height="75"/>
                                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                                         </view>
                                                         <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="ljO-Tw-gGz">
-                                                            <rect key="frame" x="12" y="0.0" width="296" height="42"/>
+                                                            <rect key="frame" x="12" y="0.0" width="296" height="41"/>
                                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -85,7 +159,7 @@
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Time" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="vcy-FS-v8A">
-                                                            <rect key="frame" x="12" y="45" width="296" height="18"/>
+                                                            <rect key="frame" x="12" y="45" width="296" height="17"/>
                                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="13"/>
@@ -93,7 +167,7 @@
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <view contentMode="scaleToFill" id="Sdu-kc-3lt">
-                                                            <rect key="frame" x="0.0" y="75" width="320" height="1"/>
+                                                            <rect key="frame" x="0.0" y="74" width="320" height="1"/>
                                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                                             <color key="backgroundColor" white="0.0" alpha="0.080000000000000002" colorSpace="calibratedWhite"/>
                                                         </view>
@@ -114,12 +188,12 @@
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <subviews>
                                                         <view contentMode="scaleToFill" id="tCG-nx-f1Q" customClass="GradientBackground">
-                                                            <rect key="frame" x="0.0" y="0.0" width="320" height="42"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="320" height="41"/>
                                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                                         </view>
                                                         <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="UUg-Dk-Ef6">
-                                                            <rect key="frame" x="10" y="0.0" width="241" height="42"/>
+                                                            <rect key="frame" x="10" y="0.0" width="241" height="41"/>
                                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -127,7 +201,7 @@
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="TDc-Ip-4ho">
-                                                            <rect key="frame" x="270" y="0.0" width="50" height="42"/>
+                                                            <rect key="frame" x="270" y="0.0" width="50" height="41"/>
                                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                             <color key="backgroundColor" white="1" alpha="0.25" colorSpace="calibratedWhite"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -135,7 +209,7 @@
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <view contentMode="scaleToFill" id="XnM-Xp-kbF">
-                                                            <rect key="frame" x="0.0" y="41" width="320" height="1"/>
+                                                            <rect key="frame" x="0.0" y="40" width="320" height="1"/>
                                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                                             <color key="backgroundColor" white="0.0" alpha="0.080000000000000002" colorSpace="calibratedWhite"/>
                                                         </view>
@@ -225,10 +299,9 @@
         </scene>
     </scenes>
     <resources>
-        <image name="LoginButton.png" width="107" height="44"/>
-        <image name="LoginWithFB.png" width="230" height="44"/>
-        <image name="SignUpButton.png" width="107" height="44"/>
         <image name="background.png" width="744" height="1392"/>
+        <image name="facebook_big.png" width="480" height="104"/>
+        <image name="login&amp;signup.png" width="230" height="104"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>

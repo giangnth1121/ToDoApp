@@ -9,6 +9,9 @@
 #import "LoginViewController.h"
 
 @interface LoginViewController ()
+{
+
+}
 
 @end
 
@@ -16,22 +19,37 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    [self initUI];
+    [self initData];
 }
-
+- (void)initUI {
+    
+    self.btnSignIn.layer.cornerRadius = 5.0f;
+    self.btnSignUp.layer.cornerRadius = 5.0f;
+    self.btnSignInFacebook.layer.cornerRadius = 5.0f;
+    _viewSignIn.hidden = YES;
+    _viewSignUp.hidden = YES;
+}
+- (void)initData {
+    
+}
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+#pragma mark - IBAction
+- (IBAction)signInPressed:(id)sender {
+    [Util showMessage:@"Sign In" withTitle:@""];
 }
-*/
+- (IBAction)signUpPressed:(id)sender {
+     [Util showMessage:@"Sign Up" withTitle:@""];
+}
+- (IBAction)signInWithFaceBookPressed:(id)sender {
+    
+    [Util showMessage:@"Sign In FB" withTitle:@""];
+}
+
+
 
 @end

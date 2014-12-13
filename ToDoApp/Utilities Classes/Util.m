@@ -284,25 +284,6 @@
     return TRUE;
 }
 
-+ (void) checkNumberNotifyAndMessageNotRead{
-    
-    [[APIClient sharedClient]getQuantityInfoWithSuccess:^(ResponseObject *responseObject) {
-        if ([[NSString stringWithFormat:@"%@", [responseObject.data objectForKey:KEY_CODE]] isEqualToString:@"0"]) {
-            NSMutableDictionary *dict = [NSMutableDictionary dictionary];
-            dict = [[responseObject.data objectForKey:KEY_DATA]objectForKey:KEY_QUANTITY_INFO];
-           
-            NSString *number = [NSString stringWithFormat:@"%@", [dict objectForKey:KEY_CONVERSATION_UNREAD]];
-            [[NSNotificationCenter defaultCenter] postNotificationName:kNotificationNumberMessageUnRead object:number];
-            
-            [UIApplication sharedApplication].applicationIconBadgeNumber = [number integerValue];
-            number = [NSString stringWithFormat:@"%@",[dict objectForKey:KEY_NOTIFY_UNREAD]];
-            [[NSNotificationCenter defaultCenter] postNotificationName:kNotificationNumberNotifyUnRead object:number];
-            
-        }
-    } failure:^(ResponseObject *failureObject) {
-        
-    }];
 
-}
 
 @end

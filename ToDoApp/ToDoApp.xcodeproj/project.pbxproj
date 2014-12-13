@@ -15,6 +15,8 @@
 		EB8F721F1A3AF31D00E8128B /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EB8F721E1A3AF31D00E8128B /* Images.xcassets */; };
 		EB8F72221A3AF31D00E8128B /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = EB8F72201A3AF31D00E8128B /* LaunchScreen.xib */; };
 		EB8F722E1A3AF31D00E8128B /* ToDoAppTests.m in Sources */ = {isa = PBXBuildFile; fileRef = EB8F722D1A3AF31D00E8128B /* ToDoAppTests.m */; };
+		EB9197F51A3C0742002788CE /* facebook_big.png in Resources */ = {isa = PBXBuildFile; fileRef = EB9197F41A3C0742002788CE /* facebook_big.png */; };
+		EB9197F71A3C07EF002788CE /* login&signup.png in Resources */ = {isa = PBXBuildFile; fileRef = EB9197F61A3C07EF002788CE /* login&signup.png */; };
 		EBDFE0891A3BE71E000CF532 /* AddListPlus.png in Resources */ = {isa = PBXBuildFile; fileRef = EBDFDFFB1A3BE71E000CF532 /* AddListPlus.png */; };
 		EBDFE08A1A3BE71E000CF532 /* AddListPlusPressed.png in Resources */ = {isa = PBXBuildFile; fileRef = EBDFDFFC1A3BE71E000CF532 /* AddListPlusPressed.png */; };
 		EBDFE08B1A3BE71E000CF532 /* Alert_Button_Cancel.png in Resources */ = {isa = PBXBuildFile; fileRef = EBDFDFFD1A3BE71E000CF532 /* Alert_Button_Cancel.png */; };
@@ -277,6 +279,8 @@
 		EB8F72271A3AF31D00E8128B /* ToDoAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ToDoAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		EB8F722C1A3AF31D00E8128B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EB8F722D1A3AF31D00E8128B /* ToDoAppTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ToDoAppTests.m; sourceTree = "<group>"; };
+		EB9197F41A3C0742002788CE /* facebook_big.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = facebook_big.png; sourceTree = "<group>"; };
+		EB9197F61A3C07EF002788CE /* login&signup.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "login&signup.png"; sourceTree = "<group>"; };
 		EBDFDFFB1A3BE71E000CF532 /* AddListPlus.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = AddListPlus.png; sourceTree = "<group>"; };
 		EBDFDFFC1A3BE71E000CF532 /* AddListPlusPressed.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = AddListPlusPressed.png; sourceTree = "<group>"; };
 		EBDFDFFD1A3BE71E000CF532 /* Alert_Button_Cancel.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Alert_Button_Cancel.png; sourceTree = "<group>"; };
@@ -725,6 +729,8 @@
 		EBDFDFFA1A3BE71E000CF532 /* image */ = {
 			isa = PBXGroup;
 			children = (
+				EB9197F61A3C07EF002788CE /* login&signup.png */,
+				EB9197F41A3C0742002788CE /* facebook_big.png */,
 				EBDFE12E1A3BECCD000CF532 /* background_app.jpg */,
 				EBDFE1261A3BEA48000CF532 /* background.png */,
 				EBDFE11B1A3BE79E000CF532 /* LoginButton.png */,
@@ -1440,6 +1446,7 @@
 				EBDFE0AF1A3BE71E000CF532 /* welcome-import-transfer.png in Resources */,
 				EBDFE0CF1A3BE71E000CF532 /* Realmac_Logo@2x.png in Resources */,
 				EBDFE3701A3BEDAF000CF532 /* arrow@2x.png in Resources */,
+				EB9197F71A3C07EF002788CE /* login&signup.png in Resources */,
 				EBDFE0AD1A3BE71E000CF532 /* welcome-import-ipad.png in Resources */,
 				EBDFE09C1A3BE71E000CF532 /* minitablet-statusbar.png in Resources */,
 				EBDFE11E1A3BE79E000CF532 /* LoginButton.png in Resources */,
@@ -1478,6 +1485,7 @@
 				EBDFE0C81A3BE71E000CF532 /* LaunchImage-800-Portrait-736h@3x.png in Resources */,
 				EBDFE08F1A3BE71E000CF532 /* AlertBackground.png in Resources */,
 				EBDFE0EC1A3BE71E000CF532 /* Default-CalendarTick.caf in Resources */,
+				EB9197F51A3C0742002788CE /* facebook_big.png in Resources */,
 				EBDFE0F01A3BE71E000CF532 /* Default-Elevator1.caf in Resources */,
 				EBDFE0FC1A3BE71E000CF532 /* Default-Pop.caf in Resources */,
 				EBDFE0A71A3BE71E000CF532 /* themes_store.png in Resources */,
