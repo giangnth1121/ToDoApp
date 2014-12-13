@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		EB8A0BB51A3BFA2B007D9D33 /* BaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EB8A0BB41A3BFA2B007D9D33 /* BaseViewController.m */; };
 		EB8F72141A3AF31D00E8128B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = EB8F72131A3AF31D00E8128B /* main.m */; };
 		EB8F72171A3AF31D00E8128B /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = EB8F72161A3AF31D00E8128B /* AppDelegate.m */; };
 		EB8F721A1A3AF31D00E8128B /* TableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EB8F72191A3AF31D00E8128B /* TableViewController.m */; };
@@ -197,7 +198,7 @@
 		EBDFE3791A3BEDAF000CF532 /* UIScrollView+SVPullToRefresh.m in Sources */ = {isa = PBXBuildFile; fileRef = EBDFE2891A3BEDAE000CF532 /* UIScrollView+SVPullToRefresh.m */; };
 		EBDFE37A1A3BEDAF000CF532 /* UIViewController+CWPopup.m in Sources */ = {isa = PBXBuildFile; fileRef = EBDFE28B1A3BEDAE000CF532 /* UIViewController+CWPopup.m */; };
 		EBDFE37B1A3BEDAF000CF532 /* V8HorizontalPickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = EBDFE28E1A3BEDAE000CF532 /* V8HorizontalPickerView.m */; };
-		EBDFE3931A3BEDAF000CF532 /* SWUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = EBDFE2C71A3BEDAE000CF532 /* SWUtil.m */; };
+		EBDFE3931A3BEDAF000CF532 /* Util.m in Sources */ = {isa = PBXBuildFile; fileRef = EBDFE2C71A3BEDAE000CF532 /* Util.m */; };
 		EBDFE3951A3BF0AC000CF532 /* libxml2.2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = EBDFE3941A3BF0AC000CF532 /* libxml2.2.dylib */; };
 		EBDFE3971A3BF0B8000CF532 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EBDFE3961A3BF0B8000CF532 /* CoreGraphics.framework */; };
 		EBDFE39B1A3BF0C5000CF532 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EBDFE39A1A3BF0C5000CF532 /* SystemConfiguration.framework */; };
@@ -261,6 +262,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		EB8A0BB31A3BFA2B007D9D33 /* BaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseViewController.h; sourceTree = "<group>"; };
+		EB8A0BB41A3BFA2B007D9D33 /* BaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseViewController.m; sourceTree = "<group>"; };
 		EB8F720E1A3AF31D00E8128B /* ToDoApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ToDoApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EB8F72121A3AF31D00E8128B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EB8F72131A3AF31D00E8128B /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -490,8 +493,8 @@
 		EBDFE2C21A3BEDAE000CF532 /* DefineText.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DefineText.h; sourceTree = "<group>"; };
 		EBDFE2C31A3BEDAE000CF532 /* SWGlobal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWGlobal.h; sourceTree = "<group>"; };
 		EBDFE2C41A3BEDAE000CF532 /* SWMacro.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWMacro.h; sourceTree = "<group>"; };
-		EBDFE2C61A3BEDAE000CF532 /* SWUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWUtil.h; sourceTree = "<group>"; };
-		EBDFE2C71A3BEDAE000CF532 /* SWUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWUtil.m; sourceTree = "<group>"; };
+		EBDFE2C61A3BEDAE000CF532 /* Util.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Util.h; sourceTree = "<group>"; };
+		EBDFE2C71A3BEDAE000CF532 /* Util.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Util.m; sourceTree = "<group>"; };
 		EBDFE3941A3BF0AC000CF532 /* libxml2.2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxml2.2.dylib; path = usr/lib/libxml2.2.dylib; sourceTree = SDKROOT; };
 		EBDFE3961A3BF0B8000CF532 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		EBDFE3981A3BF0BD000CF532 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
@@ -619,6 +622,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		EB8A0BB21A3BFA0B007D9D33 /* BaseViewVC */ = {
+			isa = PBXGroup;
+			children = (
+				EB8A0BB31A3BFA2B007D9D33 /* BaseViewController.h */,
+				EB8A0BB41A3BFA2B007D9D33 /* BaseViewController.m */,
+			);
+			path = BaseViewVC;
+			sourceTree = "<group>";
+		};
 		EB8F72051A3AF31D00E8128B = {
 			isa = PBXGroup;
 			children = (
@@ -694,8 +706,8 @@
 		EBDFDFF81A3BE54C000CF532 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				EB8A0BB21A3BFA0B007D9D33 /* BaseViewVC */,
 				EBDFE1211A3BE883000CF532 /* LoginViewVC */,
-				EBDFE1221A3BE883000CF532 /* MainTableVC */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -888,13 +900,6 @@
 			path = LoginViewVC;
 			sourceTree = "<group>";
 		};
-		EBDFE1221A3BE883000CF532 /* MainTableVC */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = MainTableVC;
-			sourceTree = "<group>";
-		};
 		EBDFE1301A3BEDAD000CF532 /* 3Party */ = {
 			isa = PBXGroup;
 			children = (
@@ -1066,8 +1071,8 @@
 		EBDFE2C51A3BEDAE000CF532 /* Utilities Classes */ = {
 			isa = PBXGroup;
 			children = (
-				EBDFE2C61A3BEDAE000CF532 /* SWUtil.h */,
-				EBDFE2C71A3BEDAE000CF532 /* SWUtil.m */,
+				EBDFE2C61A3BEDAE000CF532 /* Util.h */,
+				EBDFE2C71A3BEDAE000CF532 /* Util.m */,
 			);
 			path = "Utilities Classes";
 			sourceTree = "<group>";
@@ -1564,6 +1569,7 @@
 				EBDFE4301A3BF5E8000CF532 /* NSManagedObjectContext+MagicalThreading.m in Sources */,
 				EBDFE4341A3BF5E8000CF532 /* MagicalRecord+Actions.m in Sources */,
 				EBDFE3BA1A3BF3FE000CF532 /* User.m in Sources */,
+				EB8A0BB51A3BFA2B007D9D33 /* BaseViewController.m in Sources */,
 				EBDFE4331A3BF5E8000CF532 /* NSPersistentStoreCoordinator+MagicalRecord.m in Sources */,
 				EBDFE4221A3BF5E8000CF532 /* NSAttributeDescription+MagicalDataImport.m in Sources */,
 				EBDFE3DF1A3BF555000CF532 /* NSString+RemoveNumBer.m in Sources */,
@@ -1580,7 +1586,7 @@
 				EBDFE3CD1A3BF494000CF532 /* UIFont+Ext.m in Sources */,
 				EBDFE2CC1A3BEDAE000CF532 /* AFNetworkActivityIndicatorManager.m in Sources */,
 				EBDFE42B1A3BF5E8000CF532 /* NSManagedObject+MagicalRecord.m in Sources */,
-				EBDFE3931A3BEDAF000CF532 /* SWUtil.m in Sources */,
+				EBDFE3931A3BEDAF000CF532 /* Util.m in Sources */,
 				EBDFE4271A3BF5E8000CF532 /* NSString+MagicalDataImport.m in Sources */,
 				EBDFE3B81A3BF3FE000CF532 /* SwiftModel.xcdatamodeld in Sources */,
 				EBDFE3CE1A3BF494000CF532 /* UIImage+Ext.m in Sources */,

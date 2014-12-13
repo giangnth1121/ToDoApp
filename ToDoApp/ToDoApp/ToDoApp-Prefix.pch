@@ -21,10 +21,11 @@
 #import "MagicalRecord.h"
 #import "SWGlobal.h"
 #import "SWMacro.h"
-#import "SWUtil.h"
+#import "Util.h"
 #import "DefineText.h"
 #import "APIClient.h"
 #import "MBProgressHUD.h"
+#import "BaseViewController.h"
 /*
  *   Import Categories
  */

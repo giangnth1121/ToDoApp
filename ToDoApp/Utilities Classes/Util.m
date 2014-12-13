@@ -6,10 +6,10 @@
 //  Copyright (c) 2014 Tan Le. All rights reserved.
 //
 
-#import "SWUtil.h"
-@implementation SWUtil
+#import "Util.h"
+@implementation Util
 
-+ (SWUtil *)sharedUtil {
++ (Util *)sharedUtil {
     
     DEFINE_SHARED_INSTANCE_USING_BLOCK(^{
         return [[self alloc] init];

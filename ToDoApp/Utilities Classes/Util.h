@@ -26,11 +26,11 @@ static inline NSString *stringWithoutSpace(NSString *str)
     return result;
 }
 
-@interface SWUtil : NSObject
+@interface Util : NSObject
 
 @property (nonatomic,strong) MBProgressHUD *HUD;
 
-+ (SWUtil *)sharedUtil;
++ (Util *)sharedUtil;
 + (AppDelegate *)appDelegate;
 
 /*

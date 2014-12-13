@@ -314,7 +314,7 @@
     
     NSMutableDictionary *params = [NSMutableDictionary dictionary];
     
-    _setObjectToDictionary(params, @"uid", [[SWUtil getInfoUser] objectForKey:KEY_UID]);
+    _setObjectToDictionary(params, @"uid", [[Util getInfoUser] objectForKey:KEY_UID]);
     _setObjectToDictionary(params, @"password", oldPass);
     _setObjectToDictionary(params, @"new_password", newPass);
     
@@ -1653,9 +1653,9 @@
     
     NSString *path = kLinkPushRegisterDeviceToken;
     
-    NSString *stringToken = [SWUtil getDeviceToken];
+    NSString *stringToken = [Util getDeviceToken];
     
-    if ([SWUtil checkNullValues:stringToken]) {
+    if ([Util checkNullValues:stringToken]) {
         return;
     }
     
