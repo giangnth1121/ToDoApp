@@ -149,7 +149,7 @@
 
     
 }
-- (void)userSignUp:(NSString *)email password:(NSString *)password deviceId:(NSString *)deviceId success:(void (^)(ResponseObject *responseObject))blockSuccess failure:(void (^)(ResponseObject *failureObject))blockFailure {
+- (void)userSignUp:(NSString *)email password:(NSString *)password success:(void (^)(ResponseObject *responseObject))blockSuccess failure:(void (^)(ResponseObject *failureObject))blockFailure {
     
     NSString *path = kLinkUserSignUp;
     
@@ -157,7 +157,7 @@
     
     _setObjectToDictionary(params, @"email", email);
     _setObjectToDictionary(params, @"password", password);
-    _setObjectToDictionary(params, @"device_id", deviceId);
+    _setObjectToDictionary(params, @"device_id", UNIQUEIDENTIFIER_FOR_VENDOR);
     
     [self postPath:path parameters:params success:^(AFHTTPRequestOperation *operation, id responseObject) {
         [self processOperation:operation withData:responseObject success:blockSuccess failure:blockFailure];

@@ -8,6 +8,10 @@
 
 #import "LoginViewController.h"
 
+#define LOGIN_FACEBOOK  0
+#define LOGIN           1
+#define SIGNUP          2
+
 @interface LoginViewController ()
 {
 
@@ -16,7 +20,6 @@
 @end
 
 @implementation LoginViewController
-
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self initUI];
@@ -40,14 +43,31 @@
 
 #pragma mark - IBAction
 - (IBAction)signInPressed:(id)sender {
-    [Util showMessage:@"Sign In" withTitle:@""];
+
 }
 - (IBAction)signUpPressed:(id)sender {
-     [Util showMessage:@"Sign Up" withTitle:@""];
+    // [Util showMessage:@"Sign Up" withTitle:@""];
+   
+    
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+     SignUpViewController *vc = [storyboard instantiateViewControllerWithIdentifier:@"SignUp"];
+ 
+    vc.delegate = (id<SignUpViewControllerDelegate>)self;
+    vc.isSignUp = NO;
+    [self.navigationController pushViewController:vc animated:YES];
+
 }
 - (IBAction)signInWithFaceBookPressed:(id)sender {
     
-    [Util showMessage:@"Sign In FB" withTitle:@""];
+   // [Util showMessage:@"Sign In FB" withTitle:@""];
+
+}
+
+- (void) resgisterSuccess {
+    
+//    [self dissmissViewController];
+//    [[NSUserDefaults standardUserDefaults] setObject:@"YES" forKey:kIS_LOGED];
+
 }
 
 

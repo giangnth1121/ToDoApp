@@ -19,8 +19,8 @@
 		EB9197F71A3C07EF002788CE /* login&signup.png in Resources */ = {isa = PBXBuildFile; fileRef = EB9197F61A3C07EF002788CE /* login&signup.png */; };
 		EB9197FC1A3C202E002788CE /* SignInView.m in Sources */ = {isa = PBXBuildFile; fileRef = EB9197FB1A3C202E002788CE /* SignInView.m */; };
 		EB9197FE1A3C2056002788CE /* SignInView.xib in Resources */ = {isa = PBXBuildFile; fileRef = EB9197FD1A3C2056002788CE /* SignInView.xib */; };
-		EB9198011A3C2080002788CE /* SignUpView.m in Sources */ = {isa = PBXBuildFile; fileRef = EB9198001A3C2080002788CE /* SignUpView.m */; };
-		EB9198031A3C2092002788CE /* SignUpView.xib in Resources */ = {isa = PBXBuildFile; fileRef = EB9198021A3C2092002788CE /* SignUpView.xib */; };
+		EB9198071A3C34EE002788CE /* SignUpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EB9198051A3C34EE002788CE /* SignUpViewController.m */; };
+		EB9198081A3C34EE002788CE /* SignUpViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = EB9198061A3C34EE002788CE /* SignUpViewController.xib */; };
 		EBDFE0891A3BE71E000CF532 /* AddListPlus.png in Resources */ = {isa = PBXBuildFile; fileRef = EBDFDFFB1A3BE71E000CF532 /* AddListPlus.png */; };
 		EBDFE08A1A3BE71E000CF532 /* AddListPlusPressed.png in Resources */ = {isa = PBXBuildFile; fileRef = EBDFDFFC1A3BE71E000CF532 /* AddListPlusPressed.png */; };
 		EBDFE08B1A3BE71E000CF532 /* Alert_Button_Cancel.png in Resources */ = {isa = PBXBuildFile; fileRef = EBDFDFFD1A3BE71E000CF532 /* Alert_Button_Cancel.png */; };
@@ -288,9 +288,9 @@
 		EB9197FA1A3C202E002788CE /* SignInView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SignInView.h; sourceTree = "<group>"; };
 		EB9197FB1A3C202E002788CE /* SignInView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SignInView.m; sourceTree = "<group>"; };
 		EB9197FD1A3C2056002788CE /* SignInView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SignInView.xib; sourceTree = "<group>"; };
-		EB9197FF1A3C2080002788CE /* SignUpView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SignUpView.h; sourceTree = "<group>"; };
-		EB9198001A3C2080002788CE /* SignUpView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SignUpView.m; sourceTree = "<group>"; };
-		EB9198021A3C2092002788CE /* SignUpView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SignUpView.xib; sourceTree = "<group>"; };
+		EB9198041A3C34EE002788CE /* SignUpViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SignUpViewController.h; sourceTree = "<group>"; };
+		EB9198051A3C34EE002788CE /* SignUpViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SignUpViewController.m; sourceTree = "<group>"; };
+		EB9198061A3C34EE002788CE /* SignUpViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SignUpViewController.xib; sourceTree = "<group>"; };
 		EBDFDFFB1A3BE71E000CF532 /* AddListPlus.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = AddListPlus.png; sourceTree = "<group>"; };
 		EBDFDFFC1A3BE71E000CF532 /* AddListPlusPressed.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = AddListPlusPressed.png; sourceTree = "<group>"; };
 		EBDFDFFD1A3BE71E000CF532 /* Alert_Button_Cancel.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Alert_Button_Cancel.png; sourceTree = "<group>"; };
@@ -730,9 +730,9 @@
 		EB9197F91A3C164C002788CE /* SignUpVC */ = {
 			isa = PBXGroup;
 			children = (
-				EB9197FF1A3C2080002788CE /* SignUpView.h */,
-				EB9198001A3C2080002788CE /* SignUpView.m */,
-				EB9198021A3C2092002788CE /* SignUpView.xib */,
+				EB9198041A3C34EE002788CE /* SignUpViewController.h */,
+				EB9198051A3C34EE002788CE /* SignUpViewController.m */,
+				EB9198061A3C34EE002788CE /* SignUpViewController.xib */,
 			);
 			path = SignUpVC;
 			sourceTree = "<group>";
@@ -1400,7 +1400,6 @@
 				EBDFE3741A3BEDAF000CF532 /* nav_right_menu@2x.png in Resources */,
 				EBDFE0AE1A3BE71E000CF532 /* welcome-import-iphone.png in Resources */,
 				EBDFE0DB1A3BE71E000CF532 /* welcome-cloud@2x.png in Resources */,
-				EB9198031A3C2092002788CE /* SignUpView.xib in Resources */,
 				EBDFE0CB1A3BE71E000CF532 /* Milen_Logo@2x.png in Resources */,
 				EBDFE0C01A3BE71E000CF532 /* focus-bar-handle@2x.png in Resources */,
 				EBDFE0A11A3BE71E000CF532 /* Red_Welcome_Share_Facebook.png in Resources */,
@@ -1442,6 +1441,7 @@
 				EBDFE0B61A3BE71E000CF532 /* Alert_Button_Delete@2x.png in Resources */,
 				EBDFE09E1A3BE71E000CF532 /* question_mark.png in Resources */,
 				EBDFE0971A3BE71E000CF532 /* Impending_Logo.png in Resources */,
+				EB9198081A3C34EE002788CE /* SignUpViewController.xib in Resources */,
 				EBDFE0D21A3BE71E000CF532 /* Red_Welcome_Share_Facebook@2x.png in Resources */,
 				EBDFE11A1A3BE784000CF532 /* Sign Up Button Menu@2X.png in Resources */,
 				EBDFE1061A3BE71E000CF532 /* Default-StringScale3.caf in Resources */,
@@ -1602,7 +1602,6 @@
 				EBDFE42F1A3BF5E8000CF532 /* NSManagedObjectContext+MagicalSaves.m in Sources */,
 				EBDFE43B1A3BF5E8000CF532 /* NSArray+Accessors.m in Sources */,
 				EBDFE32E1A3BEDAF000CF532 /* GCDispatch.m in Sources */,
-				EB9198011A3C2080002788CE /* SignUpView.m in Sources */,
 				EB8F72171A3AF31D00E8128B /* AppDelegate.m in Sources */,
 				EBDFE4291A3BF5E8000CF532 /* NSManagedObject+MagicalDataImport.m in Sources */,
 				EBDFE2CB1A3BEDAE000CF532 /* AFJSONRequestOperation.m in Sources */,
@@ -1642,6 +1641,7 @@
 				EBDFE3B51A3BF3FE000CF532 /* ResponseObject.m in Sources */,
 				EBDFE3B91A3BF3FE000CF532 /* User+Creator.m in Sources */,
 				EBDFE4351A3BF5E8000CF532 /* MagicalRecord+ErrorHandling.m in Sources */,
+				EB9198071A3C34EE002788CE /* SignUpViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

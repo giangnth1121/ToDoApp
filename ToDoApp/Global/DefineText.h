@@ -17,5 +17,22 @@
 // define text for language
 #define LANGUAGE @"Localized"
 
+// alert view
+#pragma mark Alert View
+#define ALERT_EMPTY_EMAIL               @"Email is empty"
+#define ALERT_EMPTY_PASSWORD            @"Password is empty"
+#define ALERT_FAIL_PASSWORD             @"Password have 5-20 characters"
+#define ALERT_FAIL_FORMAT_EMAIL         @"Invalid email"
+#define ALERT_CHECK_AGAIN               @" Check again"
+
+#define ALERT_LOGIN_SUCCESS             @"Login Success !"
+#define ALERT_LOGIN_FAIL                @"Login Fail !"
+
+
+#define ALERT_REGISTER_SUCCESS          @"Register Success"
+#define ALERT_REGISTER_FAIL             @"Register Fail"
+#define ALERT_REGISTER_AGAIN            @"Register Again"
+
+#define ALERT_NETWORK_ERROR               @"NetWork Error"
 
 #endif

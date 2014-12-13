@@ -65,6 +65,5 @@ static inline NSString *stringWithoutSpace(NSString *str)
 + (void) saveDeviceToken:(NSString *) token;
 + (NSString *) getImageSaveParth:(NSString *) imageName;
 + (BOOL) deleteAllImageSell;
-+ (void) checkNumberNotifyAndMessageNotRead;
 
 @end

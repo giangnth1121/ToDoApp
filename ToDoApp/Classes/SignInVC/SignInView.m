@@ -62,8 +62,6 @@
 
 - (IBAction)forgotPassWordTapped:(id)sender {
 
-    
-    
 }
 
 @end

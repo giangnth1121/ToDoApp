@@ -7,12 +7,15 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "SignUpViewController.h"
 
 @interface LoginViewController : BaseViewController {
-    
+
     IBOutlet UIView *_viewSignUp;
     IBOutlet UIView *_viewSignIn;
 }
+
+
 @property (nonatomic, strong) IBOutlet UIButton *btnSignIn;
 @property (nonatomic, strong) IBOutlet UIButton *btnSignUp;
 @property (nonatomic, strong) IBOutlet UIButton *btnSignInFacebook;

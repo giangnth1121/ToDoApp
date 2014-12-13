@@ -26,6 +26,7 @@
 #import "APIClient.h"
 #import "MBProgressHUD.h"
 #import "BaseViewController.h"
+#import "AppDelegate.h"
 /*
  *   Import Categories
  */

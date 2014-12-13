@@ -317,7 +317,7 @@ static SlideNavigationController *singletonInstance;
 
 - (void)openMenu:(Menu)menu withDuration:(float)duration andCompletion:(void (^)())completion
 {
-    [Util checkNumberNotifyAndMessageNotRead]; // check number notify and message unread
+    // check number notify and message unread
 	[self.topViewController.view addGestureRecognizer:self.tapRecognizer];
 	
 	[self prepareMenuForReveal:menu];

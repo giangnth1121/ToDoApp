@@ -67,10 +67,10 @@
 #define PUSH_TYPE_ADDPRODUCT 5
 
 // key data
-#define KEY_INFO @"info"
-#define KEY_CODE    @"code"
-#define KEY_DATE    @"data"
-#define ALERT_NETWORK_ERR @"Network Error!"
+#define KEY_INFO                @"info"
+#define KEY_CODE                @"code"
+#define KEY_DATA                @"data"
+#define ALERT_NETWORK_ERR       @"Network Error!"
 
 
 #endif
