@@ -1,0 +1,56 @@
+//
+//  Prefix header
+//
+//  The contents of this file are implicitly included at the beginning of every source file.
+//
+
+#import <Availability.h>
+
+#ifndef __IPHONE_3_0
+#warning "This project uses features only available in iOS SDK 3.0 and later."
+#endif
+
+#ifdef __OBJC__
+    #import <UIKit/UIKit.h>
+    #import <Foundation/Foundation.h>
+
+#define MR_SHORTHAND
+#import "SWNavigationViewController.h"
+#import "CoreData+MagicalRecord.h"
+#import "Datamanager.h"
+#import "MagicalRecord.h"
+#import "SWGlobal.h"
+#import "SWMacro.h"
+#import "SWUtil.h"
+#import "DefineText.h"
+#import "SWBaseViewController.h"
+#import "APIClient.h"
+#import "MBProgressHUD.h"
+/*
+ *   Import Categories
+ */
+#import "UIColor+Ext.h"
+#import "UIImage+Ext.h"
+#import "UIFont+Ext.h"
+#import "UIButton+Ext.h"
+#import "UILabel+Ext.h"
+#import "UIImageView+Ext.h"
+#import "NSString+FontAwesome.h"
+#import "UIButton+Bootstrap.h"
+#import "UIImageView+AFNetworking.h"
+
+/*
+ *  Import ViewControllers
+ */
+
+#import "SlideNavigationController.h"
+#import "User.h"
+#import "User+Creator.h"
+
+/*
+ * Define Push Notification Center
+ */
+#define SHOW_IMAGE_SELECTED_KEY @"SHOW_IMAGE_SELECTED_KEY"
+
+#endif
+
