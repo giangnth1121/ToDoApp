@@ -39,6 +39,7 @@ static inline NSString *stringWithoutSpace(NSString *str)
 + (UIViewController*)newUniversalViewControllerWithClassName:(NSString*)className;
 
 - (void)showLoadingOnView:(UIView *)parentView withLable:(NSString *)label;
+- (void)showLoadingView;
 - (void)hideLoadingView;
 
 + (void)showMessage:(NSString *)message withTitle:(NSString *)title;

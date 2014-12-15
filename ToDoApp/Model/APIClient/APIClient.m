@@ -149,7 +149,7 @@
 
     
 }
-- (void)userSignUp:(NSString *)email password:(NSString *)password success:(void (^)(ResponseObject *responseObject))blockSuccess failure:(void (^)(ResponseObject *failureObject))blockFailure {
+- (void)userRegister:(NSString *)email password:(NSString *)password success:(void (^)(ResponseObject *responseObject))blockSuccess failure:(void (^)(ResponseObject *failureObject))blockFailure {
     
     NSString *path = kLinkUserSignUp;
     

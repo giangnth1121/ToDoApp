@@ -17,10 +17,6 @@
 		EB8F722E1A3AF31D00E8128B /* ToDoAppTests.m in Sources */ = {isa = PBXBuildFile; fileRef = EB8F722D1A3AF31D00E8128B /* ToDoAppTests.m */; };
 		EB9197F51A3C0742002788CE /* facebook_big.png in Resources */ = {isa = PBXBuildFile; fileRef = EB9197F41A3C0742002788CE /* facebook_big.png */; };
 		EB9197F71A3C07EF002788CE /* login&signup.png in Resources */ = {isa = PBXBuildFile; fileRef = EB9197F61A3C07EF002788CE /* login&signup.png */; };
-		EB9197FC1A3C202E002788CE /* SignInView.m in Sources */ = {isa = PBXBuildFile; fileRef = EB9197FB1A3C202E002788CE /* SignInView.m */; };
-		EB9197FE1A3C2056002788CE /* SignInView.xib in Resources */ = {isa = PBXBuildFile; fileRef = EB9197FD1A3C2056002788CE /* SignInView.xib */; };
-		EB9198071A3C34EE002788CE /* SignUpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EB9198051A3C34EE002788CE /* SignUpViewController.m */; };
-		EB9198081A3C34EE002788CE /* SignUpViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = EB9198061A3C34EE002788CE /* SignUpViewController.xib */; };
 		EBDFE0891A3BE71E000CF532 /* AddListPlus.png in Resources */ = {isa = PBXBuildFile; fileRef = EBDFDFFB1A3BE71E000CF532 /* AddListPlus.png */; };
 		EBDFE08A1A3BE71E000CF532 /* AddListPlusPressed.png in Resources */ = {isa = PBXBuildFile; fileRef = EBDFDFFC1A3BE71E000CF532 /* AddListPlusPressed.png */; };
 		EBDFE08B1A3BE71E000CF532 /* Alert_Button_Cancel.png in Resources */ = {isa = PBXBuildFile; fileRef = EBDFDFFD1A3BE71E000CF532 /* Alert_Button_Cancel.png */; };
@@ -285,12 +281,6 @@
 		EB8F722D1A3AF31D00E8128B /* ToDoAppTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ToDoAppTests.m; sourceTree = "<group>"; };
 		EB9197F41A3C0742002788CE /* facebook_big.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = facebook_big.png; sourceTree = "<group>"; };
 		EB9197F61A3C07EF002788CE /* login&signup.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "login&signup.png"; sourceTree = "<group>"; };
-		EB9197FA1A3C202E002788CE /* SignInView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SignInView.h; sourceTree = "<group>"; };
-		EB9197FB1A3C202E002788CE /* SignInView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SignInView.m; sourceTree = "<group>"; };
-		EB9197FD1A3C2056002788CE /* SignInView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SignInView.xib; sourceTree = "<group>"; };
-		EB9198041A3C34EE002788CE /* SignUpViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SignUpViewController.h; sourceTree = "<group>"; };
-		EB9198051A3C34EE002788CE /* SignUpViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SignUpViewController.m; sourceTree = "<group>"; };
-		EB9198061A3C34EE002788CE /* SignUpViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SignUpViewController.xib; sourceTree = "<group>"; };
 		EBDFDFFB1A3BE71E000CF532 /* AddListPlus.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = AddListPlus.png; sourceTree = "<group>"; };
 		EBDFDFFC1A3BE71E000CF532 /* AddListPlusPressed.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = AddListPlusPressed.png; sourceTree = "<group>"; };
 		EBDFDFFD1A3BE71E000CF532 /* Alert_Button_Cancel.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Alert_Button_Cancel.png; sourceTree = "<group>"; };
@@ -717,22 +707,9 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		EB9197F81A3C164C002788CE /* SignInVC */ = {
-			isa = PBXGroup;
-			children = (
-				EB9197FA1A3C202E002788CE /* SignInView.h */,
-				EB9197FB1A3C202E002788CE /* SignInView.m */,
-				EB9197FD1A3C2056002788CE /* SignInView.xib */,
-			);
-			path = SignInVC;
-			sourceTree = "<group>";
-		};
 		EB9197F91A3C164C002788CE /* SignUpVC */ = {
 			isa = PBXGroup;
 			children = (
-				EB9198041A3C34EE002788CE /* SignUpViewController.h */,
-				EB9198051A3C34EE002788CE /* SignUpViewController.m */,
-				EB9198061A3C34EE002788CE /* SignUpViewController.xib */,
 			);
 			path = SignUpVC;
 			sourceTree = "<group>";
@@ -740,7 +717,6 @@
 		EBDFDFF81A3BE54C000CF532 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				EB9197F81A3C164C002788CE /* SignInVC */,
 				EB9197F91A3C164C002788CE /* SignUpVC */,
 				EB8A0BB21A3BFA0B007D9D33 /* BaseViewVC */,
 				EBDFE1211A3BE883000CF532 /* LoginViewVC */,
@@ -1418,7 +1394,6 @@
 				EBDFE0951A3BE71E000CF532 /* gift-red.png in Resources */,
 				EBDFE3511A3BEDAF000CF532 /* Done@2x.png in Resources */,
 				EBDFE1271A3BEA48000CF532 /* background.png in Resources */,
-				EB9197FE1A3C2056002788CE /* SignInView.xib in Resources */,
 				EBDFE0E61A3BE71E000CF532 /* welcome-phone-priority@2x.png in Resources */,
 				EBDFE0D11A3BE71E000CF532 /* Red_Welcome_Phone@2x.png in Resources */,
 				EBDFE08E1A3BE71E000CF532 /* Alert_Button_Delete_Pressed.png in Resources */,
@@ -1441,7 +1416,6 @@
 				EBDFE0B61A3BE71E000CF532 /* Alert_Button_Delete@2x.png in Resources */,
 				EBDFE09E1A3BE71E000CF532 /* question_mark.png in Resources */,
 				EBDFE0971A3BE71E000CF532 /* Impending_Logo.png in Resources */,
-				EB9198081A3C34EE002788CE /* SignUpViewController.xib in Resources */,
 				EBDFE0D21A3BE71E000CF532 /* Red_Welcome_Share_Facebook@2x.png in Resources */,
 				EBDFE11A1A3BE784000CF532 /* Sign Up Button Menu@2X.png in Resources */,
 				EBDFE1061A3BE71E000CF532 /* Default-StringScale3.caf in Resources */,
@@ -1618,7 +1592,6 @@
 				EBDFE42E1A3BF5E8000CF532 /* NSManagedObjectContext+MagicalRecord.m in Sources */,
 				EB8F72141A3AF31D00E8128B /* main.m in Sources */,
 				EBDFE3711A3BEDAF000CF532 /* PullToRefreshView.m in Sources */,
-				EB9197FC1A3C202E002788CE /* SignInView.m in Sources */,
 				EBDFE42A1A3BF5E8000CF532 /* NSManagedObject+MagicalFinders.m in Sources */,
 				EBDFE4381A3BF5E8000CF532 /* MagicalRecord+Setup.m in Sources */,
 				EBDFE4361A3BF5E8000CF532 /* MagicalRecord+iCloud.m in Sources */,
@@ -1641,7 +1614,6 @@
 				EBDFE3B51A3BF3FE000CF532 /* ResponseObject.m in Sources */,
 				EBDFE3B91A3BF3FE000CF532 /* User+Creator.m in Sources */,
 				EBDFE4351A3BF5E8000CF532 /* MagicalRecord+ErrorHandling.m in Sources */,
-				EB9198071A3C34EE002788CE /* SignUpViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

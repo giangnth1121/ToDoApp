@@ -7,12 +7,18 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "SignUpViewController.h"
 
-@interface LoginViewController : BaseViewController {
+@interface LoginViewController : BaseViewController <UITextFieldDelegate>{
 
     IBOutlet UIView *_viewSignUp;
     IBOutlet UIView *_viewSignIn;
+    
+    IBOutlet UITextField *_txtSignInEmail;
+    IBOutlet UITextField *_txtSignInPassWord;
+    
+    IBOutlet UITextField *_txtSignUpEmail;
+    IBOutlet UITextField *_txtSignUpPassWord;
+    
 }
 
 
@@ -20,7 +26,10 @@
 @property (nonatomic, strong) IBOutlet UIButton *btnSignUp;
 @property (nonatomic, strong) IBOutlet UIButton *btnSignInFacebook;
 
+- (IBAction)showSignInPressed:(id)sender;
+- (IBAction)showSignUpPressed:(id)sender;
+- (IBAction)signInWithFaceBookPressed:(id)sender;
 - (IBAction)signInPressed:(id)sender;
 - (IBAction)signUpPressed:(id)sender;
-- (IBAction)signInWithFaceBookPressed:(id)sender;
+
 @end

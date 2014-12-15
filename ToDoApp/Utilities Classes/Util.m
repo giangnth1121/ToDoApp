@@ -7,6 +7,9 @@
 //
 
 #import "Util.h"
+@interface Util()
+@property (atomic, readwrite) NSInteger loadingViewCount;
+@end
 @implementation Util
 
 + (Util *)sharedUtil {
@@ -60,6 +63,19 @@
     return nil;
 }
 
+- (void)showLoadingView {
+    [self showLoadingViewWithTitle:@""];
+}
+
+- (void)showLoadingViewWithTitle:(NSString *)title {
+    self.HUD.labelText = title;
+    if (self.loadingViewCount == 0) {
+        [[Util appDelegate].window bringSubviewToFront:self.HUD];
+        [self.HUD show:NO];
+    }
+    self.loadingViewCount++;
+}
+
 - (void)showLoadingOnView:(UIView *)parentView withLable:(NSString *)label{
     
     self.HUD = [[MBProgressHUD alloc] initWithView:parentView];
@@ -76,9 +92,14 @@
 }
 
 - (void)hideLoadingView {
-    
-    [self.HUD hide:YES];
+    if (self.loadingViewCount > 0) {
+        if (self.loadingViewCount == 1) {
+            [self.HUD hide:NO];
+        }
+        self.loadingViewCount--;
+    }
 }
+
 
 + (void)showMessage:(NSString *)message withTitle:(NSString *)title {
     

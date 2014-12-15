@@ -43,7 +43,7 @@
 #pragma mark - User
 - (void) userLogin:(NSString *)email password:(NSString *)password success:(void (^)(ResponseObject *responseObject))blockSuccess failure:(void (^)(ResponseObject *failureObject))blockFailure;
 - (void) userFaceBookLogin:(NSString *)email fbId:(NSString *)fbId deviceId:(NSString *)deviceId success:(void (^)(ResponseObject *responseObject))blockSuccess failure:(void (^)(ResponseObject *failureObject))blockFailure;
-- (void)userSignUp:(NSString *)email password:(NSString *)password success:(void (^)(ResponseObject *responseObject))blockSuccess failure:(void (^)(ResponseObject *failureObject))blockFailure;
+- (void)userRegister:(NSString *)email password:(NSString *)password success:(void (^)(ResponseObject *responseObject))blockSuccess failure:(void (^)(ResponseObject *failureObject))blockFailure;
 - (void)userSignUpFacebook:(NSString *)email fbId:(NSString *)fbId deviceId:(NSString *)deviceId success:(void (^)(ResponseObject *responseObject))blockSuccess failure:(void (^)(ResponseObject *failureObject))blockFailure;
 - (void)userLogOut:(NSString *)uID deviceId:(NSString *)deviceId success:(void (^)(ResponseObject *responseObject))blockSuccess failure:(void (^)(ResponseObject *failureObject))blockFailure;
 - (void)registerDevice:(NSString *)deviceId typeID:(NSString *)typeID regID:(NSString *)regID success:(void (^)(ResponseObject *responseObject))blockSuccess failure:(void (^)(ResponseObject *failureObject))blockFailure;

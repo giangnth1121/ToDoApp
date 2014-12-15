@@ -21,7 +21,7 @@
 #pragma mark Alert View
 #define ALERT_EMPTY_EMAIL               @"Email is empty"
 #define ALERT_EMPTY_PASSWORD            @"Password is empty"
-#define ALERT_FAIL_PASSWORD             @"Password have 5-20 characters"
+#define ALERT_FAIL_PASSWORD             @"Password must have 5-20 characters"
 #define ALERT_FAIL_FORMAT_EMAIL         @"Invalid email"
 #define ALERT_CHECK_AGAIN               @" Check again"
 
