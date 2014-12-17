@@ -33,6 +33,6 @@
 #define ALERT_REGISTER_FAIL             @"Register Fail"
 #define ALERT_REGISTER_AGAIN            @"Register Again"
 
-#define ALERT_NETWORK_ERROR               @"NetWork Error"
+#define ALERT_NETWORK_ERROR             @"NetWork Error"
 
 #endif

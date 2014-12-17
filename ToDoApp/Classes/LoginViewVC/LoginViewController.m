@@ -7,6 +7,7 @@
 //
 
 #import "LoginViewController.h"
+#import "TableViewController.h"
 
 #define LOGIN_FACEBOOK  0
 #define LOGIN           1
@@ -34,6 +35,7 @@
                                              selector:@selector(keyboardWillHide:)
                                                  name:UIKeyboardWillHideNotification
                                                object:nil];
+    [[self navigationController] setNavigationBarHidden:YES animated:YES];
 }
 - (void)viewWillDisappear:(BOOL)animated
 {
@@ -57,8 +59,6 @@
     self.btnSignIn.layer.cornerRadius = 5.0f;
     self.btnSignUp.layer.cornerRadius = 5.0f;
     self.btnSignInFacebook.layer.cornerRadius = 5.0f;
-//    _viewSignIn.hidden = YES;
-//    _viewSignUp.hidden = YES;
     _txtSignInEmail.delegate = self;
     _txtSignInPassWord.delegate = self;
     _txtSignUpEmail.delegate = self;
@@ -66,9 +66,8 @@
 
     UITapGestureRecognizer *tapRecognizer = [[UITapGestureRecognizer alloc]
                                              initWithTarget:self action:@selector(resetFrameView:)];
-    
-    // Add the tap gesture recognizer to the view
     [self.view addGestureRecognizer:tapRecognizer];
+    
     _viewSignUp.hidden = YES;
     _viewSignIn.hidden = YES;
 }
@@ -90,9 +89,7 @@
 - (void)resetFrameView:(id)sender {
     _viewSignIn.hidden = YES;
     _viewSignUp.hidden = YES;
-  // [_txtSignInEmail resignFirstResponder];
     [self.view endEditing:YES];
-    
 }
 #pragma mark - IBAction
 - (IBAction)showSignInPressed:(id)sender {
@@ -121,6 +118,16 @@
 - (IBAction)signInWithFaceBookPressed:(id)sender {
     
    // [Util showMessage:@"Sign In FB" withTitle:@""];
+    AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
+    
+    if (appDelegate.session.isOpen) {
+        
+        [appDelegate populateUserDetails];
+    }
+    else {
+        
+        [appDelegate openSessionWithAllowLoginUI:YES];
+    }
 
 }
 - (IBAction)signInPressed:(id)sender {
@@ -206,19 +213,32 @@
     }
     
     void(^successBlock)(ResponseObject *) = ^void(ResponseObject *responseObject) {
-        
         if ([[NSString stringWithFormat:@"%@",[responseObject.data objectForKey:KEY_CODE]] isEqualToString:@"0"]) {
             
+            NSDictionary *data = [responseObject.data objectForKey:KEY_DATA];
+            NSDictionary *profile = [data objectForKey:@"profile"];
+            [[NSUserDefaults standardUserDefaults] setObject:stringCheckNull([profile objectForKey:@"uid"]) forKey:user_logged_ids];
+            [[NSUserDefaults standardUserDefaults] setObject:@"1" forKey:user_logged_type];
+            [[NSUserDefaults standardUserDefaults] setObject:@"YES" forKey:kIS_LOGED];
+            [[NSUserDefaults standardUserDefaults] synchronize];
+            
+            User *userObj = [User createWithId:stringCheckNull([profile objectForKey:@"uid"])];
+            [userObj setcontent:profile];
+            [DataManager saveAllChanges];
+            
+            TableViewController *controller = [self.storyboard instantiateViewControllerWithIdentifier:@"TableIdentifier"];
+            [self.navigationController pushViewController:controller animated:YES];
+            [Util showMessage:nil withTitle:ALERT_REGISTER_SUCCESS];
         }
         
     };
+    
     void(^failBlock)(ResponseObject *) = ^void(ResponseObject *responseObject) {
         
         [[Util sharedUtil] hideLoadingView];
         [Util showMessage:nil withTitle:ALERT_NETWORK_ERROR];
+        
     };
-    
-    
     [[Util sharedUtil] showLoadingView];
     [[APIClient sharedClient] userRegister:_txtSignUpEmail.text
                                   password:_txtSignUpPassWord.text

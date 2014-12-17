@@ -46,7 +46,7 @@
 - (void)userRegister:(NSString *)email password:(NSString *)password success:(void (^)(ResponseObject *responseObject))blockSuccess failure:(void (^)(ResponseObject *failureObject))blockFailure;
 - (void)userSignUpFacebook:(NSString *)email fbId:(NSString *)fbId deviceId:(NSString *)deviceId success:(void (^)(ResponseObject *responseObject))blockSuccess failure:(void (^)(ResponseObject *failureObject))blockFailure;
 - (void)userLogOut:(NSString *)uID deviceId:(NSString *)deviceId success:(void (^)(ResponseObject *responseObject))blockSuccess failure:(void (^)(ResponseObject *failureObject))blockFailure;
-- (void)registerDevice:(NSString *)deviceId typeID:(NSString *)typeID regID:(NSString *)regID success:(void (^)(ResponseObject *responseObject))blockSuccess failure:(void (^)(ResponseObject *failureObject))blockFailure;
+- (void)registerDeviceWithTypeID:(int)typeID regID:(int)regID success:(void (^)(ResponseObject *responseObject))blockSuccess failure:(void (^)(ResponseObject *failureObject))blockFailure;
 
 #pragma mark - Note
 - (void)createNewNote:(NSString *)uID nameNote:(NSString *)nameNote success:(void (^)(ResponseObject *responseObject))blockSuccess failure:(void (^)(ResponseObject *failureObject))blockFailure;

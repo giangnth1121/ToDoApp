@@ -158,12 +158,15 @@
     _setObjectToDictionary(params, @"email", email);
     _setObjectToDictionary(params, @"password", password);
     _setObjectToDictionary(params, @"device_id", UNIQUEIDENTIFIER_FOR_VENDOR);
+    NSLog(@"%@",params);
     
     [self postPath:path parameters:params success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        
         [self processOperation:operation withData:responseObject success:blockSuccess failure:blockFailure];
         
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         [self processOperation:operation withData:nil success:blockSuccess failure:blockFailure];
+        NSLog(@" error:%@",error);
     }];
     
 }
@@ -200,15 +203,25 @@
         [self processOperation:operation withData:nil success:blockSuccess failure:blockFailure];
     }];
 }
-- (void)registerDevice:(NSString *)deviceId typeID:(NSString *)typeID regID:(NSString *)regID success:(void (^)(ResponseObject *responseObject))blockSuccess failure:(void (^)(ResponseObject *failureObject))blockFailure {
+- (void)registerDeviceWithTypeID:(int)typeID regID:(int)regID success:(void (^)(ResponseObject *responseObject))blockSuccess failure:(void (^)(ResponseObject *failureObject))blockFailure {
     
     NSString *path = KLinkRegisterDevice;
     
     NSMutableDictionary *params = [NSMutableDictionary dictionary];
     
-    _setObjectToDictionary(params, @"device_id", deviceId);
-     _setObjectToDictionary(params, @"dtype_id", typeID);
-     _setObjectToDictionary(params, @"reg_id", regID);
+    NSString *strTypeID = [NSString stringWithFormat:@"%ld",(long)typeID];
+    NSString *strRegID = [NSString stringWithFormat:@"%ld",(long)regID];
+    
+    _setObjectToDictionary(params, @"device_id", UNIQUEIDENTIFIER_FOR_VENDOR);
+    _setObjectToDictionary(params, @"dtype_id", strTypeID);
+    _setObjectToDictionary(params, @"reg_id", strRegID);
+    
+    NSString *logedIn = [[NSUserDefaults standardUserDefaults] objectForKey:kIS_LOGED];
+    if ([logedIn isEqualToString:@"YES"]) {
+        User *user = [User currentUser];
+        _setObjectToDictionary(params, @"uid", [user.uid stringValue]);
+    }
+    
     
     [self postPath:path parameters:params success:^(AFHTTPRequestOperation *operation, id responseObject) {
         [self processOperation:operation withData:responseObject success:blockSuccess failure:blockFailure];
@@ -216,6 +229,7 @@
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         [self processOperation:operation withData:nil success:blockSuccess failure:blockFailure];
     }];
+    
 }
 
 #pragma mark - Note
