@@ -9,22 +9,6 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Classes/LoginViewVC/LoginViewController.m"
-            timestampString = "440330368.865625"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "182"
-            endingLineNumber = "182"
-            landmarkName = "-signInPressed:"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
             filePath = "Model/APIClient/APIClient.m"
             timestampString = "440481090.888008"
             startingColumnNumber = "9223372036854775807"
@@ -73,12 +57,12 @@
                   symbolName = "-[APIClient userRegister:password:success:failure:]"
                   moduleName = "ToDoApp"
                   urlString = "file:///Users/NGUYENHAGIANG/Documents/CleanApp/ToDoApp/Model/APIClient/APIClient.m"
-                  timestampString = "440484662.278292"
+                  timestampString = "440504409.204533"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "163"
                   endingLineNumber = "163"
-                  offsetFromSymbolStart = "520">
+                  offsetFromSymbolStart = "618">
                </Location>
                <Location
                   shouldBeEnabled = "Yes"
@@ -87,12 +71,12 @@
                   symbolName = "__51-[APIClient userRegister:password:success:failure:]_block_invoke"
                   moduleName = "ToDoApp"
                   urlString = "file:///Users/NGUYENHAGIANG/Documents/CleanApp/ToDoApp/Model/APIClient/APIClient.m"
-                  timestampString = "440484662.27864"
+                  timestampString = "440504409.204796"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "163"
                   endingLineNumber = "163"
-                  offsetFromSymbolStart = "28">
+                  offsetFromSymbolStart = "34">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -104,27 +88,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ToDoApp/AppDelegate.m"
-            timestampString = "440484285.136235"
+            timestampString = "440485308.935556"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "82"
-            endingLineNumber = "82"
-            landmarkName = "-application:didRegisterForRemoteNotificationsWithDeviceToken:"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "ToDoApp/AppDelegate.m"
-            timestampString = "440484880.507567"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "120"
-            endingLineNumber = "120"
+            startingLineNumber = "116"
+            endingLineNumber = "116"
             landmarkName = "-application:didReceiveRemoteNotification:"
             landmarkType = "5">
          </BreakpointContent>
@@ -136,11 +104,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ToDoApp/AppDelegate.m"
-            timestampString = "440484880.507567"
+            timestampString = "440485308.935556"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "114"
-            endingLineNumber = "114"
+            startingLineNumber = "111"
+            endingLineNumber = "111"
             landmarkName = "@implementation AppDelegate"
             landmarkType = "3">
          </BreakpointContent>
@@ -151,44 +119,154 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Model/APIClient/APIClient.m"
-            timestampString = "440484662.21387"
+            filePath = "Classes/LoginViewVC/SignInView/SignInView.m"
+            timestampString = "440503920.66537"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "227"
-            endingLineNumber = "227"
-            landmarkName = "-registerDeviceWithTypeID:regID:success:failure:"
+            startingLineNumber = "67"
+            endingLineNumber = "67"
+            landmarkName = "-signInTapped:"
             landmarkType = "5">
             <Locations>
                <Location
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "-[APIClient registerDeviceWithTypeID:regID:success:failure:]"
+                  symbolName = "-[SignInView signInTapped:]"
                   moduleName = "ToDoApp"
-                  urlString = "file:///Users/NGUYENHAGIANG/Documents/CleanApp/ToDoApp/Model/APIClient/APIClient.m"
-                  timestampString = "440484662.286242"
+                  urlString = "file:///Users/NGUYENHAGIANG/Documents/CleanApp/ToDoApp/Classes/LoginViewVC/SignInView/SignInView.m"
+                  timestampString = "440504409.213946"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "227"
-                  endingLineNumber = "227"
-                  offsetFromSymbolStart = "636">
+                  startingLineNumber = "67"
+                  endingLineNumber = "67"
+                  offsetFromSymbolStart = "1598">
                </Location>
                <Location
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "__60-[APIClient registerDeviceWithTypeID:regID:success:failure:]_block_invoke"
+                  symbolName = "__27-[SignInView signInTapped:]_block_invoke"
                   moduleName = "ToDoApp"
-                  urlString = "file:///Users/NGUYENHAGIANG/Documents/CleanApp/ToDoApp/Model/APIClient/APIClient.m"
-                  timestampString = "440484662.286485"
+                  urlString = "file:///Users/NGUYENHAGIANG/Documents/CleanApp/ToDoApp/Classes/LoginViewVC/SignInView/SignInView.m"
+                  timestampString = "440504409.214354"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "227"
-                  endingLineNumber = "227"
-                  offsetFromSymbolStart = "28">
+                  startingLineNumber = "67"
+                  endingLineNumber = "67"
+                  offsetFromSymbolStart = "58">
                </Location>
             </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Classes/LoginViewVC/SignInView/SignInView.m"
+            timestampString = "440503922.364913"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "94"
+            endingLineNumber = "94"
+            landmarkName = "-signInTapped:"
+            landmarkType = "5">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "-[SignInView signInTapped:]"
+                  moduleName = "ToDoApp"
+                  urlString = "file:///Users/NGUYENHAGIANG/Documents/CleanApp/ToDoApp/Classes/LoginViewVC/SignInView/SignInView.m"
+                  timestampString = "440504409.215611"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "94"
+                  endingLineNumber = "94"
+                  offsetFromSymbolStart = "1646">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "__27-[SignInView signInTapped:]_block_invoke108"
+                  moduleName = "ToDoApp"
+                  urlString = "file:///Users/NGUYENHAGIANG/Documents/CleanApp/ToDoApp/Classes/LoginViewVC/SignInView/SignInView.m"
+                  timestampString = "440504409.215914"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "94"
+                  endingLineNumber = "94"
+                  offsetFromSymbolStart = "80">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Classes/LoginViewVC/SignInView/SignInView.m"
+            timestampString = "440503928.014874"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "73"
+            endingLineNumber = "73"
+            landmarkName = "-signInTapped:"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Classes/LoginViewVC/SignInView/SignInView.m"
+            timestampString = "440503930.974135"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "70"
+            endingLineNumber = "70"
+            landmarkName = "-signInTapped:"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Classes/LoginViewVC/SignInView/SignInView.m"
+            timestampString = "440503932.414441"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "69"
+            endingLineNumber = "69"
+            landmarkName = "-signInTapped:"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Classes/LoginViewVC/SignInView/SignInView.m"
+            timestampString = "440504009.94859"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "40"
+            endingLineNumber = "40"
+            landmarkName = "-signInTapped:"
+            landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

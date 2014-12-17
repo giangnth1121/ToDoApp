@@ -10,7 +10,17 @@
 		EB017E761A4134AA004FCD42 /* todo_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = EB017E751A4134AA004FCD42 /* todo_icon.png */; };
 		EB017E781A4134BA004FCD42 /* todo_icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = EB017E771A4134BA004FCD42 /* todo_icon@2x.png */; };
 		EB017E7B1A4137B3004FCD42 /* Util.m in Sources */ = {isa = PBXBuildFile; fileRef = EB017E7A1A4137B3004FCD42 /* Util.m */; };
-		EB8A0BB51A3BFA2B007D9D33 /* BaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EB8A0BB41A3BFA2B007D9D33 /* BaseViewController.m */; };
+		EB017E881A416E90004FCD42 /* value-prop-0@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = EB017E821A416E90004FCD42 /* value-prop-0@2x.png */; };
+		EB017E891A416E90004FCD42 /* value-prop-1@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = EB017E831A416E90004FCD42 /* value-prop-1@2x.png */; };
+		EB017E8A1A416E90004FCD42 /* value-prop-2@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = EB017E841A416E90004FCD42 /* value-prop-2@2x.png */; };
+		EB017E8B1A416E90004FCD42 /* value-prop-3@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = EB017E851A416E90004FCD42 /* value-prop-3@2x.png */; };
+		EB017E8C1A416E90004FCD42 /* value-prop-4@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = EB017E861A416E90004FCD42 /* value-prop-4@2x.png */; };
+		EB017E8D1A416E90004FCD42 /* value-prop-canvas@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = EB017E871A416E90004FCD42 /* value-prop-canvas@2x.png */; };
+		EB017E901A41702F004FCD42 /* black_dot@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = EB017E8E1A41702F004FCD42 /* black_dot@2x.png */; };
+		EB017E911A41702F004FCD42 /* white_dot@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = EB017E8F1A41702F004FCD42 /* white_dot@2x.png */; };
+		EB017E951A4170A2004FCD42 /* BaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EB017E941A4170A2004FCD42 /* BaseViewController.m */; };
+		EB017E9A1A4170DB004FCD42 /* SignInView.m in Sources */ = {isa = PBXBuildFile; fileRef = EB017E991A4170DB004FCD42 /* SignInView.m */; };
+		EB017E9C1A4170F5004FCD42 /* SignInView.xib in Resources */ = {isa = PBXBuildFile; fileRef = EB017E9B1A4170F5004FCD42 /* SignInView.xib */; };
 		EB8F72141A3AF31D00E8128B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = EB8F72131A3AF31D00E8128B /* main.m */; };
 		EB8F72171A3AF31D00E8128B /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = EB8F72161A3AF31D00E8128B /* AppDelegate.m */; };
 		EB8F721A1A3AF31D00E8128B /* TableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EB8F72191A3AF31D00E8128B /* TableViewController.m */; };
@@ -252,6 +262,12 @@
 		EBDFE43A1A3BF5E8000CF532 /* MagicalRecord.m in Sources */ = {isa = PBXBuildFile; fileRef = EBDFE4191A3BF5E8000CF532 /* MagicalRecord.m */; };
 		EBDFE43B1A3BF5E8000CF532 /* NSArray+Accessors.m in Sources */ = {isa = PBXBuildFile; fileRef = EBDFE41E1A3BF5E8000CF532 /* NSArray+Accessors.m */; };
 		EBDFE43C1A3BF5E8000CF532 /* NSManagedObject+ActiveRecord.m in Sources */ = {isa = PBXBuildFile; fileRef = EBDFE4201A3BF5E8000CF532 /* NSManagedObject+ActiveRecord.m */; };
+		EBEA6CD51A41729200C7BCBB /* SignUpView.m in Sources */ = {isa = PBXBuildFile; fileRef = EBEA6CD41A41729200C7BCBB /* SignUpView.m */; };
+		EBEA6CD71A41729D00C7BCBB /* SignUpView.xib in Resources */ = {isa = PBXBuildFile; fileRef = EBEA6CD61A41729D00C7BCBB /* SignUpView.xib */; };
+		EBEA6CD91A4188E500C7BCBB /* bg@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = EBEA6CD81A4188E500C7BCBB /* bg@2x.png */; };
+		EBEA6CDD1A418AC200C7BCBB /* button_bar_background.png in Resources */ = {isa = PBXBuildFile; fileRef = EBEA6CDA1A418AC200C7BCBB /* button_bar_background.png */; };
+		EBEA6CDE1A418AC200C7BCBB /* button-default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = EBEA6CDB1A418AC200C7BCBB /* button-default@2x.png */; };
+		EBEA6CDF1A418AC200C7BCBB /* button-hit@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = EBEA6CDC1A418AC200C7BCBB /* button-hit@2x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -269,8 +285,19 @@
 		EB017E771A4134BA004FCD42 /* todo_icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "todo_icon@2x.png"; sourceTree = "<group>"; };
 		EB017E791A4137B3004FCD42 /* Util.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Util.h; sourceTree = "<group>"; };
 		EB017E7A1A4137B3004FCD42 /* Util.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Util.m; sourceTree = "<group>"; };
-		EB8A0BB31A3BFA2B007D9D33 /* BaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseViewController.h; sourceTree = "<group>"; };
-		EB8A0BB41A3BFA2B007D9D33 /* BaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseViewController.m; sourceTree = "<group>"; };
+		EB017E821A416E90004FCD42 /* value-prop-0@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "value-prop-0@2x.png"; sourceTree = "<group>"; };
+		EB017E831A416E90004FCD42 /* value-prop-1@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "value-prop-1@2x.png"; sourceTree = "<group>"; };
+		EB017E841A416E90004FCD42 /* value-prop-2@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "value-prop-2@2x.png"; sourceTree = "<group>"; };
+		EB017E851A416E90004FCD42 /* value-prop-3@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "value-prop-3@2x.png"; sourceTree = "<group>"; };
+		EB017E861A416E90004FCD42 /* value-prop-4@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "value-prop-4@2x.png"; sourceTree = "<group>"; };
+		EB017E871A416E90004FCD42 /* value-prop-canvas@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "value-prop-canvas@2x.png"; sourceTree = "<group>"; };
+		EB017E8E1A41702F004FCD42 /* black_dot@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "black_dot@2x.png"; sourceTree = "<group>"; };
+		EB017E8F1A41702F004FCD42 /* white_dot@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "white_dot@2x.png"; sourceTree = "<group>"; };
+		EB017E931A4170A2004FCD42 /* BaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseViewController.h; sourceTree = "<group>"; };
+		EB017E941A4170A2004FCD42 /* BaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseViewController.m; sourceTree = "<group>"; };
+		EB017E981A4170DB004FCD42 /* SignInView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SignInView.h; sourceTree = "<group>"; };
+		EB017E991A4170DB004FCD42 /* SignInView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SignInView.m; sourceTree = "<group>"; };
+		EB017E9B1A4170F5004FCD42 /* SignInView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SignInView.xib; sourceTree = "<group>"; };
 		EB8F720E1A3AF31D00E8128B /* ToDoApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ToDoApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EB8F72121A3AF31D00E8128B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EB8F72131A3AF31D00E8128B /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -602,6 +629,13 @@
 		EBDFE41E1A3BF5E8000CF532 /* NSArray+Accessors.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+Accessors.m"; sourceTree = "<group>"; };
 		EBDFE41F1A3BF5E8000CF532 /* NSManagedObject+ActiveRecord.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSManagedObject+ActiveRecord.h"; sourceTree = "<group>"; };
 		EBDFE4201A3BF5E8000CF532 /* NSManagedObject+ActiveRecord.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSManagedObject+ActiveRecord.m"; sourceTree = "<group>"; };
+		EBEA6CD31A41729200C7BCBB /* SignUpView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SignUpView.h; sourceTree = "<group>"; };
+		EBEA6CD41A41729200C7BCBB /* SignUpView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SignUpView.m; sourceTree = "<group>"; };
+		EBEA6CD61A41729D00C7BCBB /* SignUpView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SignUpView.xib; sourceTree = "<group>"; };
+		EBEA6CD81A4188E500C7BCBB /* bg@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bg@2x.png"; sourceTree = "<group>"; };
+		EBEA6CDA1A418AC200C7BCBB /* button_bar_background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = button_bar_background.png; sourceTree = "<group>"; };
+		EBEA6CDB1A418AC200C7BCBB /* button-default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "button-default@2x.png"; sourceTree = "<group>"; };
+		EBEA6CDC1A418AC200C7BCBB /* button-hit@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "button-hit@2x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -627,13 +661,47 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		EB8A0BB21A3BFA0B007D9D33 /* BaseViewVC */ = {
+		EB017E811A416E90004FCD42 /* ImageLanding */ = {
 			isa = PBXGroup;
 			children = (
-				EB8A0BB31A3BFA2B007D9D33 /* BaseViewController.h */,
-				EB8A0BB41A3BFA2B007D9D33 /* BaseViewController.m */,
+				EBEA6CD81A4188E500C7BCBB /* bg@2x.png */,
+				EB017E821A416E90004FCD42 /* value-prop-0@2x.png */,
+				EB017E831A416E90004FCD42 /* value-prop-1@2x.png */,
+				EB017E841A416E90004FCD42 /* value-prop-2@2x.png */,
+				EB017E851A416E90004FCD42 /* value-prop-3@2x.png */,
+				EB017E861A416E90004FCD42 /* value-prop-4@2x.png */,
+				EB017E871A416E90004FCD42 /* value-prop-canvas@2x.png */,
+			);
+			path = ImageLanding;
+			sourceTree = "<group>";
+		};
+		EB017E921A4170A2004FCD42 /* BaseViewVC */ = {
+			isa = PBXGroup;
+			children = (
+				EB017E931A4170A2004FCD42 /* BaseViewController.h */,
+				EB017E941A4170A2004FCD42 /* BaseViewController.m */,
 			);
 			path = BaseViewVC;
+			sourceTree = "<group>";
+		};
+		EB017E961A4170C2004FCD42 /* SignInView */ = {
+			isa = PBXGroup;
+			children = (
+				EB017E981A4170DB004FCD42 /* SignInView.h */,
+				EB017E991A4170DB004FCD42 /* SignInView.m */,
+				EB017E9B1A4170F5004FCD42 /* SignInView.xib */,
+			);
+			path = SignInView;
+			sourceTree = "<group>";
+		};
+		EB017E971A4170C2004FCD42 /* SignUpView */ = {
+			isa = PBXGroup;
+			children = (
+				EBEA6CD31A41729200C7BCBB /* SignUpView.h */,
+				EBEA6CD41A41729200C7BCBB /* SignUpView.m */,
+				EBEA6CD61A41729D00C7BCBB /* SignUpView.xib */,
+			);
+			path = SignUpView;
 			sourceTree = "<group>";
 		};
 		EB8F72051A3AF31D00E8128B = {
@@ -707,18 +775,10 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		EB9197F91A3C164C002788CE /* SignUpVC */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = SignUpVC;
-			sourceTree = "<group>";
-		};
 		EBDFDFF81A3BE54C000CF532 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				EB9197F91A3C164C002788CE /* SignUpVC */,
-				EB8A0BB21A3BFA0B007D9D33 /* BaseViewVC */,
+				EB017E921A4170A2004FCD42 /* BaseViewVC */,
 				EBDFE1211A3BE883000CF532 /* LoginViewVC */,
 			);
 			path = Classes;
@@ -737,6 +797,7 @@
 		EBDFDFFA1A3BE71E000CF532 /* image */ = {
 			isa = PBXGroup;
 			children = (
+				EB017E811A416E90004FCD42 /* ImageLanding */,
 				EB017E751A4134AA004FCD42 /* todo_icon.png */,
 				EB9197F61A3C07EF002788CE /* login&signup.png */,
 				EB9197F41A3C0742002788CE /* facebook_big.png */,
@@ -793,6 +854,11 @@
 		EBDFE0241A3BE71E000CF532 /* image@2x */ = {
 			isa = PBXGroup;
 			children = (
+				EBEA6CDA1A418AC200C7BCBB /* button_bar_background.png */,
+				EBEA6CDB1A418AC200C7BCBB /* button-default@2x.png */,
+				EBEA6CDC1A418AC200C7BCBB /* button-hit@2x.png */,
+				EB017E8E1A41702F004FCD42 /* black_dot@2x.png */,
+				EB017E8F1A41702F004FCD42 /* white_dot@2x.png */,
 				EB017E771A4134BA004FCD42 /* todo_icon@2x.png */,
 				EBDFE1151A3BE783000CF532 /* Login Button Menu@2X.png */,
 				EBDFE1161A3BE783000CF532 /* Login with Facebook icon@2x.png */,
@@ -910,6 +976,8 @@
 		EBDFE1211A3BE883000CF532 /* LoginViewVC */ = {
 			isa = PBXGroup;
 			children = (
+				EB017E961A4170C2004FCD42 /* SignInView */,
+				EB017E971A4170C2004FCD42 /* SignUpView */,
 				EBDFE1231A3BE8B1000CF532 /* LoginViewController.h */,
 				EBDFE1241A3BE8B1000CF532 /* LoginViewController.m */,
 			);
@@ -1388,6 +1456,7 @@
 				EBDFE0941A3BE71E000CF532 /* cross.png in Resources */,
 				EBDFE0AC1A3BE71E000CF532 /* welcome-guide-iphone-newsletter.png in Resources */,
 				EBDFE0D01A3BE71E000CF532 /* red-suits-tablet-theme@2x.png in Resources */,
+				EB017E8D1A416E90004FCD42 /* value-prop-canvas@2x.png in Resources */,
 				EBDFE0F21A3BE71E000CF532 /* Default-Elevator3.caf in Resources */,
 				EBDFE09A1A3BE71E000CF532 /* lists_unlock.png in Resources */,
 				EBDFE0E01A3BE71E000CF532 /* welcome-import-transfer@2x.png in Resources */,
@@ -1395,6 +1464,7 @@
 				EBDFE0A61A3BE71E000CF532 /* ShareButtonPressed.png in Resources */,
 				EBDFE0DA1A3BE71E000CF532 /* twitter_bird@2x.png in Resources */,
 				EBDFE0951A3BE71E000CF532 /* gift-red.png in Resources */,
+				EBEA6CDF1A418AC200C7BCBB /* button-hit@2x.png in Resources */,
 				EBDFE3511A3BEDAF000CF532 /* Done@2x.png in Resources */,
 				EBDFE1271A3BEA48000CF532 /* background.png in Resources */,
 				EBDFE0E61A3BE71E000CF532 /* welcome-phone-priority@2x.png in Resources */,
@@ -1406,6 +1476,8 @@
 				EBDFE0EE1A3BE71E000CF532 /* Default-DragPutdown.caf in Resources */,
 				EBDFE0901A3BE71E000CF532 /* check_white.png in Resources */,
 				EBDFE0FF1A3BE71E000CF532 /* Default-SlideLeft.caf in Resources */,
+				EB017E9C1A4170F5004FCD42 /* SignInView.xib in Resources */,
+				EBEA6CDD1A418AC200C7BCBB /* button_bar_background.png in Resources */,
 				EBDFE0B51A3BE71E000CF532 /* Alert_Button_Cancel_Pressed@2x.png in Resources */,
 				EBDFE0DE1A3BE71E000CF532 /* welcome-import-ipad@2x.png in Resources */,
 				EBDFE1131A3BE71E000CF532 /* Default-ThemeStrum5.caf in Resources */,
@@ -1416,6 +1488,7 @@
 				EBDFE0BC1A3BE71E000CF532 /* clear@2x.png in Resources */,
 				EB8F721D1A3AF31D00E8128B /* Main.storyboard in Resources */,
 				EBDFE1011A3BE71E000CF532 /* Default-StringMelody1.caf in Resources */,
+				EBEA6CD91A4188E500C7BCBB /* bg@2x.png in Resources */,
 				EBDFE0B61A3BE71E000CF532 /* Alert_Button_Delete@2x.png in Resources */,
 				EBDFE09E1A3BE71E000CF532 /* question_mark.png in Resources */,
 				EBDFE0971A3BE71E000CF532 /* Impending_Logo.png in Resources */,
@@ -1434,8 +1507,10 @@
 				EBDFE0921A3BE71E000CF532 /* clear_arrow.png in Resources */,
 				EBDFE0B81A3BE71E000CF532 /* Alert_Button_Standard@2x.png in Resources */,
 				EBDFE0D81A3BE71E000CF532 /* themes_store@2x.png in Resources */,
+				EB017E901A41702F004FCD42 /* black_dot@2x.png in Resources */,
 				EBDFE0B71A3BE71E000CF532 /* Alert_Button_Delete_Pressed@2x.png in Resources */,
 				EBDFE1111A3BE71E000CF532 /* Default-ThemeStrum3.caf in Resources */,
+				EB017E8B1A416E90004FCD42 /* value-prop-3@2x.png in Resources */,
 				EBDFE1021A3BE71E000CF532 /* Default-StringMelody3.caf in Resources */,
 				EBDFE0B31A3BE71E000CF532 /* AddListPlusPressed@2x.png in Resources */,
 				EBDFE0F91A3BE71E000CF532 /* Default-InsertAbortPull.caf in Resources */,
@@ -1449,6 +1524,7 @@
 				EBDFE0DF1A3BE71E000CF532 /* welcome-import-iphone@2x.png in Resources */,
 				EBDFE0BD1A3BE71E000CF532 /* clear_arrow@2x.png in Resources */,
 				EBDFE0C91A3BE71E000CF532 /* lists_lock@2x.png in Resources */,
+				EB017E881A416E90004FCD42 /* value-prop-0@2x.png in Resources */,
 				EBDFE0E91A3BE71E000CF532 /* Default-Archive.caf in Resources */,
 				EBDFE0EF1A3BE71E000CF532 /* Default-EasterEgg.caf in Resources */,
 				EBDFE36F1A3BEDAF000CF532 /* arrow.png in Resources */,
@@ -1470,6 +1546,7 @@
 				EBDFE0EA1A3BE71E000CF532 /* Default-ArchiveAbort.caf in Resources */,
 				EBDFE0D71A3BE71E000CF532 /* ShareButtonPressed@2x.png in Resources */,
 				EBDFE0C71A3BE71E000CF532 /* LaunchImage-800-667h@2x.png in Resources */,
+				EB017E891A416E90004FCD42 /* value-prop-1@2x.png in Resources */,
 				EBDFE0B11A3BE71E000CF532 /* welcome-update-app.png in Resources */,
 				EBDFE0891A3BE71E000CF532 /* AddListPlus.png in Resources */,
 				EBDFE0A81A3BE71E000CF532 /* themes_store_commit.png in Resources */,
@@ -1477,14 +1554,18 @@
 				EBDFE0ED1A3BE71E000CF532 /* Default-DragPickup.caf in Resources */,
 				EBDFE08A1A3BE71E000CF532 /* AddListPlusPressed.png in Resources */,
 				EBDFE0B41A3BE71E000CF532 /* Alert_Button_Cancel@2x.png in Resources */,
+				EBEA6CD71A41729D00C7BCBB /* SignUpView.xib in Resources */,
 				EBDFE1141A3BE71E000CF532 /* Default-WaterDrop.caf in Resources */,
 				EBDFE1071A3BE71E000CF532 /* Default-StringScale4.caf in Resources */,
 				EBDFE1121A3BE71E000CF532 /* Default-ThemeStrum4.caf in Resources */,
+				EB017E911A41702F004FCD42 /* white_dot@2x.png in Resources */,
 				EBDFE1101A3BE71E000CF532 /* Default-ThemeStrum2.caf in Resources */,
+				EBEA6CDE1A418AC200C7BCBB /* button-default@2x.png in Resources */,
 				EBDFE0C41A3BE71E000CF532 /* keyboard-focus-glyph@2x.png in Resources */,
 				EBDFE0D61A3BE71E000CF532 /* ShareButton@2x.png in Resources */,
 				EBDFE10E1A3BE71E000CF532 /* Default-Tap.caf in Resources */,
 				EBDFE0A21A3BE71E000CF532 /* Red_Welcome_Share_Twitter.png in Resources */,
+				EB017E8C1A416E90004FCD42 /* value-prop-4@2x.png in Resources */,
 				EBDFE0F61A3BE71E000CF532 /* Default-IncompletionSeq3.caf in Resources */,
 				EBDFE0C51A3BE71E000CF532 /* LaunchImage-700-568h@2x.png in Resources */,
 				EBDFE1181A3BE784000CF532 /* Login Button Menu@2X.png in Resources */,
@@ -1495,6 +1576,7 @@
 				EBDFE0BB1A3BE71E000CF532 /* check_white@2x.png in Resources */,
 				EBDFE0BF1A3BE71E000CF532 /* cross@2x.png in Resources */,
 				EBDFE0981A3BE71E000CF532 /* keyboard-focus-glyph.png in Resources */,
+				EB017E8A1A416E90004FCD42 /* value-prop-2@2x.png in Resources */,
 				EBDFE0C81A3BE71E000CF532 /* LaunchImage-800-Portrait-736h@3x.png in Resources */,
 				EBDFE08F1A3BE71E000CF532 /* AlertBackground.png in Resources */,
 				EBDFE0EC1A3BE71E000CF532 /* Default-CalendarTick.caf in Resources */,
@@ -1581,6 +1663,7 @@
 				EBDFE42F1A3BF5E8000CF532 /* NSManagedObjectContext+MagicalSaves.m in Sources */,
 				EBDFE43B1A3BF5E8000CF532 /* NSArray+Accessors.m in Sources */,
 				EBDFE32E1A3BEDAF000CF532 /* GCDispatch.m in Sources */,
+				EBEA6CD51A41729200C7BCBB /* SignUpView.m in Sources */,
 				EB8F72171A3AF31D00E8128B /* AppDelegate.m in Sources */,
 				EBDFE4291A3BF5E8000CF532 /* NSManagedObject+MagicalDataImport.m in Sources */,
 				EBDFE2CB1A3BEDAE000CF532 /* AFJSONRequestOperation.m in Sources */,
@@ -1590,7 +1673,6 @@
 				EBDFE4301A3BF5E8000CF532 /* NSManagedObjectContext+MagicalThreading.m in Sources */,
 				EBDFE4341A3BF5E8000CF532 /* MagicalRecord+Actions.m in Sources */,
 				EBDFE3BA1A3BF3FE000CF532 /* User.m in Sources */,
-				EB8A0BB51A3BFA2B007D9D33 /* BaseViewController.m in Sources */,
 				EBDFE4331A3BF5E8000CF532 /* NSPersistentStoreCoordinator+MagicalRecord.m in Sources */,
 				EBDFE4221A3BF5E8000CF532 /* NSAttributeDescription+MagicalDataImport.m in Sources */,
 				EBDFE3DF1A3BF555000CF532 /* NSString+RemoveNumBer.m in Sources */,
@@ -1598,11 +1680,13 @@
 				EB8F72141A3AF31D00E8128B /* main.m in Sources */,
 				EBDFE3711A3BEDAF000CF532 /* PullToRefreshView.m in Sources */,
 				EBDFE42A1A3BF5E8000CF532 /* NSManagedObject+MagicalFinders.m in Sources */,
+				EB017E9A1A4170DB004FCD42 /* SignInView.m in Sources */,
 				EBDFE4381A3BF5E8000CF532 /* MagicalRecord+Setup.m in Sources */,
 				EBDFE4361A3BF5E8000CF532 /* MagicalRecord+iCloud.m in Sources */,
 				EBDFE3751A3BEDAF000CF532 /* SlideNavigationController.m in Sources */,
 				EBDFE2CD1A3BEDAE000CF532 /* AFPropertyListRequestOperation.m in Sources */,
 				EBDFE4391A3BF5E8000CF532 /* MagicalRecord+ShorthandSupport.m in Sources */,
+				EB017E951A4170A2004FCD42 /* BaseViewController.m in Sources */,
 				EBDFE4321A3BF5E8000CF532 /* NSPersistentStore+MagicalRecord.m in Sources */,
 				EBDFE3CD1A3BF494000CF532 /* UIFont+Ext.m in Sources */,
 				EBDFE2CC1A3BEDAE000CF532 /* AFNetworkActivityIndicatorManager.m in Sources */,

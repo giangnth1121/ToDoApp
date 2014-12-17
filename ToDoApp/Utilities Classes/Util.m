@@ -46,7 +46,7 @@
 }
 
 - (void)showLoadingView {
-    [self showLoadingViewWithTitle:@""];
+    [self showLoadingViewWithTitle:@"Loading"];
 }
 
 - (void)showLoadingViewWithTitle:(NSString *)title {

@@ -8,6 +8,9 @@
 
 #import "LoginViewController.h"
 #import "TableViewController.h"
+#import "SMPageControl.h"
+#import "SignInView.h"
+#import "SignUpView.h"
 
 #define LOGIN_FACEBOOK  0
 #define LOGIN           1
@@ -17,6 +20,9 @@
 @interface LoginViewController ()
 {
     BOOL _isSignIn;
+    SMPageControl *_pageControl;
+    SignInView *_signInView;
+    SignUpView *_signUpView;
 }
 
 @end
@@ -52,29 +58,75 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self initUI];
-    [self initData];
+    [self initViewSignIn];
+    [self initViewSignUp];
 }
 - (void)initUI {
-    
-    self.btnSignIn.layer.cornerRadius = 5.0f;
-    self.btnSignUp.layer.cornerRadius = 5.0f;
-    self.btnSignInFacebook.layer.cornerRadius = 5.0f;
-    _txtSignInEmail.delegate = self;
-    _txtSignInPassWord.delegate = self;
-    _txtSignUpEmail.delegate = self;
-    _txtSignUpPassWord.delegate = self;
+
 
     UITapGestureRecognizer *tapRecognizer = [[UITapGestureRecognizer alloc]
                                              initWithTarget:self action:@selector(resetFrameView:)];
     [self.view addGestureRecognizer:tapRecognizer];
+    NSArray *arrayImages = [[NSArray alloc] initWithObjects:@"value-prop-0@2x.png", @"value-prop-1@2x.png", @"value-prop-2@2x.png", @"value-prop-3@2x.png", @"value-prop-4@2x.png", nil];
     
-    _viewSignUp.hidden = YES;
-    _viewSignIn.hidden = YES;
+    UIImageView *imageBackground  = [[UIImageView alloc] initWithFrame:CGRectMake(-SCREEN_WIDTH_PORTRAIT, 0, SCREEN_WIDTH_PORTRAIT* [arrayImages count], SCREEN_HEIGHT_PORTRAIT)];
+    imageBackground.image = [UIImage imageNamed:@"bg@2x.png"];
+    [_scrollBackground addSubview:imageBackground];
+    _scrollBackground.contentSize = CGSizeMake(SCREEN_WIDTH_PORTRAIT* [arrayImages count], SCREEN_HEIGHT_PORTRAIT);
+    _scrollBackground.delegate = self;
+    _scrollBackground.pagingEnabled = YES;
+    [_scrollBackground addSubview: imageBackground];
+    
+    _scrollContent.backgroundColor = [UIColor clearColor];
+    _scrollContent.pagingEnabled = YES;
+    _scrollContent.delegate = self;
+    
+    _scrollContent.contentSize = CGSizeMake(SCREEN_WIDTH_PORTRAIT*[arrayImages count], SCREEN_HEIGHT_PORTRAIT);
+    for (int i = 0; i<[arrayImages count]; i++) {
+        UIImageView *imgView = [[UIImageView alloc] initWithFrame:CGRectMake(SCREEN_WIDTH_PORTRAIT*i + 60, 100, 200, 237)];
+        imgView.contentMode = UIViewContentModeScaleAspectFit;
+        imgView.image = [UIImage imageNamed:[NSString stringWithFormat:@"%@", arrayImages[i]]];
+        [_scrollContent addSubview:imgView];
+        
+    }
+    
+    _pageControl = [[SMPageControl alloc] init];
+    [_pageControl setFrame:CGRectMake(self.view.center.x - 50, SCREEN_HEIGHT_PORTRAIT*0.691, 100, 20)];
+    [_pageControl setNumberOfPages:[arrayImages count]];
+    [_pageControl setBackgroundColor: [UIColor clearColor]];
+    _pageControl.currentPageIndicatorImage = [UIImage imageNamed:@"white_dot.png"];
+    _pageControl.pageIndicatorImage = [UIImage imageNamed:@"black_dot.png"];
+    [_pageControl sizeForNumberOfPages:10];
+    
+    [self.view addSubview:_pageControl];
 }
-- (void)initData {
+- (void) initViewSignIn{
+    if (_signInView == nil) {
+        _signInView = [[SignInView alloc] init];
+        _signInView.delegate = (id<SignInViewDelegate>)self;
+        [self setFrameView:_signInView];
+        [self.view addSubview:_signInView];
+    }
     
 }
 
+- (void) initViewSignUp{
+    if (_signUpView == nil) {
+        _signUpView = [[SignUpView alloc] init];
+        _signUpView.delegate = (id<SignUpViewDelegate>)self;
+        
+        [self setFrameView:_signUpView];
+        [self.view addSubview:_signUpView];
+    }
+}
+
+- (void) setFrameView:(UIView*)view{
+    CGRect frame = view.frame;
+    frame.origin.x = 0;
+    frame.origin.y = SCREEN_HEIGHT_PORTRAIT;
+    frame.size.width = SCREEN_WIDTH_PORTRAIT;
+    view.frame = frame;
+}
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
@@ -87,35 +139,32 @@
 }
 
 - (void)resetFrameView:(id)sender {
-    _viewSignIn.hidden = YES;
-    _viewSignUp.hidden = YES;
+    _signInView.hidden = YES;
+    _signUpView.hidden = YES;
+    _viewContent.hidden = NO;
     [self.view endEditing:YES];
 }
 #pragma mark - IBAction
-- (IBAction)showSignInPressed:(id)sender {
+
+- (IBAction)showSignInViewTapped:(id)sender {
    
-    _viewSignIn.frame = CGRectMake(0,SCREEN_HEIGHT_PORTRAIT +_viewSignIn.bounds.size.height, _viewSignIn.bounds.size.width, _viewSignIn.bounds.size.height);
-    _viewSignIn.hidden = NO;
-     CGRect frame = _viewSignIn.frame;
-    [UIView beginAnimations:nil context:NULL];
-    [UIView animateWithDuration:0.5 animations:nil];
-    frame.origin.y = SCREEN_HEIGHT_PORTRAIT- _viewSignIn.bounds.size.height ;
-    _viewSignIn.frame = frame;
-    [UIView commitAnimations];
+    _signUpView.hidden = YES;
+    _viewContent.hidden = YES;
+    _signInView.hidden = NO;
+    
+    [self setFrameViewForActionTapped:_signInView];
+    NSLog(@"%f", _signInView.bounds.size.width);
     
 }
-- (IBAction)showSignUpPressed:(id)sender {
+- (IBAction)showSignUpViewTapped:(id)sender{
     
-    _viewSignUp.frame = CGRectMake(0,SCREEN_HEIGHT_PORTRAIT +_viewSignUp.bounds.size.height, _viewSignUp.bounds.size.width, _viewSignUp.bounds.size.height);
-    _viewSignUp.hidden = NO;
-    CGRect frame = _viewSignUp.frame;
-    [UIView beginAnimations:nil context:NULL];
-    [UIView animateWithDuration:0.5 animations:nil];
-    frame.origin.y = SCREEN_HEIGHT_PORTRAIT- _viewSignUp.bounds.size.height ;
-    _viewSignUp.frame = frame;
-    [UIView commitAnimations];
+    _signInView.hidden = YES;
+    _viewContent.hidden = YES;
+    _signUpView.hidden = NO;
+    
+    [self setFrameViewForActionTapped:_signUpView];
 }
-- (IBAction)signInWithFaceBookPressed:(id)sender {
+- (IBAction)signInWithFaceBookTapped:(id)sender {
     
    // [Util showMessage:@"Sign In FB" withTitle:@""];
     AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
@@ -125,138 +174,27 @@
         [appDelegate populateUserDetails];
     }
     else {
-        
         [appDelegate openSessionWithAllowLoginUI:YES];
     }
-
 }
-- (IBAction)signInPressed:(id)sender {
-    // check email empty
-    if ([[_txtSignInEmail.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]] length] == 0) {
-        [self createAlertWithMessage:ALERT_EMPTY_EMAIL];
-        return;
-    }
-    
-    // check password empty
-    if ([[_txtSignInPassWord.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]] length] == 0) {
-        [self createAlertWithMessage:ALERT_EMPTY_PASSWORD];
-        return;
-    }
-    
-    // check password length 6->20
-    if ([[_txtSignInPassWord.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]] length] < 6 || [[_txtSignUpPassWord.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]] length] >20) {
-        [self createAlertWithMessage:ALERT_FAIL_PASSWORD];
-        return;
-    }
-    
-    // check format email
-    NSString *emailRegEx = @"[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,4}";
-    NSPredicate *emailTest = [NSPredicate predicateWithFormat:@"SELF MATCHES %@", emailRegEx];
-    
-    if ([emailTest evaluateWithObject:_txtSignInEmail.text] == NO) {
-        
-        [self createAlertWithMessage:ALERT_FAIL_FORMAT_EMAIL];
-        return;
-    }
-    
-    void(^successBlock)(ResponseObject *) = ^void(ResponseObject *responseObject) {
-        
-        if ([[NSString stringWithFormat:@"%@",[responseObject.data objectForKey:KEY_CODE]] isEqualToString:@"0"]) {
-            
-        }
-        
-    };
-    void(^failBlock)(ResponseObject *) = ^void(ResponseObject *responseObject) {
-        
-        [[Util sharedUtil] hideLoadingView];
-       
-    };
-    
-    
-    [[Util sharedUtil] showLoadingView];
-    [[APIClient sharedClient] userLogin:_txtSignInEmail.text
-                               password:_txtSignInPassWord.text
-                                success:successBlock
-                                failure:failBlock];
 
-
-
+- (void)setFrameViewForActionTapped:(UIView*)view{
+    CGRect frame = view.frame;
+    frame.origin.y = SCREEN_HEIGHT_PORTRAIT;
+    view.frame = frame;
+    frame.origin.y = SCREEN_HEIGHT_PORTRAIT - view.bounds.size.height;
+    
+    [UIView beginAnimations:nil context:NULL];
+    [UIView animateWithDuration:0.3 animations:nil];
+    view.frame = frame;
+    [UIView commitAnimations];
 }
-- (IBAction)signUpPressed:(id)sender {
 
-    // check email empty
-    if ([[_txtSignUpEmail.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]] length] == 0) {
-        [self createAlertWithMessage:ALERT_EMPTY_EMAIL];
-        return;
-    }
-    
-    // check password empty
-    if ([[_txtSignUpPassWord.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]] length] == 0) {
-        [self createAlertWithMessage:ALERT_EMPTY_PASSWORD];
-        return;
-    }
-    
-    // check password length 6->20
-    if ([[_txtSignUpPassWord.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]] length] < 6 || [[_txtSignUpPassWord.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]] length] >20) {
-        [self createAlertWithMessage:ALERT_FAIL_PASSWORD];
-        return;
-    }
-    
-    // check format email
-    NSString *emailRegEx = @"[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,4}";
-    NSPredicate *emailTest = [NSPredicate predicateWithFormat:@"SELF MATCHES %@", emailRegEx];
-    
-    if ([emailTest evaluateWithObject:_txtSignUpEmail.text] == NO) {
-        
-        [self createAlertWithMessage:ALERT_FAIL_FORMAT_EMAIL];
-        return;
-    }
-    
-    void(^successBlock)(ResponseObject *) = ^void(ResponseObject *responseObject) {
-        NSLog(@"responseObject data :%@", responseObject.data);
-        if ([[NSString stringWithFormat:@"%@",[responseObject.data objectForKey:KEY_CODE]] isEqualToString:@"0"]) {
-            
-            NSDictionary *data = [responseObject.data objectForKey:KEY_DATA];
-            NSDictionary *profile = [data objectForKey:@"profile"];
-            [[NSUserDefaults standardUserDefaults] setObject:stringCheckNull([profile objectForKey:@"uid"]) forKey:user_logged_ids];
-            [[NSUserDefaults standardUserDefaults] setObject:@"1" forKey:user_logged_type];
-            [[NSUserDefaults standardUserDefaults] setObject:@"YES" forKey:kIS_LOGED];
-            [[NSUserDefaults standardUserDefaults] synchronize];
-            
-            User *userObj = [User createWithId:stringCheckNull([profile objectForKey:@"uid"])];
-            [userObj setcontent:profile];
-            [DataManager saveAllChanges];
-            
-            TableViewController *controller = [self.storyboard instantiateViewControllerWithIdentifier:@"TableIdentifier"];
-            [self.navigationController pushViewController:controller animated:YES];
-            
-            [Util showAlertWithMessage:ALERT_REGISTER_SUCCESS delegate:nil];
-        } else {
-            NSString *message = [responseObject.data objectForKey:KEY_MESSAGE];
-
-            [Util showAlert:ALERT_ERROR message:message delegate:self];
-        }
-        
-    };
-    
-    void(^failBlock)(ResponseObject *) = ^void(ResponseObject *responseObject) {
-        
-        [[Util sharedUtil] hideLoadingView];
-        [Util showAlertError:ALERT_NETWORK_ERROR];
-        
-    };
-    
-    [[Util sharedUtil] showLoadingView];
-    [[APIClient sharedClient] userRegister:_txtSignUpEmail.text
-                                  password:_txtSignUpPassWord.text
-                                   success:successBlock
-                                   failure:failBlock];
-}
 #pragma mark - KeyBoard
 -(void)keyboardWillShow :(NSNotification *)notification{
     // Animate the current view out of the way
-    [self setViewMovedUp:_viewSignIn];
-    [self setViewMovedUp:_viewSignUp];
+    [self setViewMovedUp:_signInView];
+    [self setViewMovedUp:_signUpView];
 }
 
 -(void)keyboardWillHide:(NSNotification *)notification {
@@ -269,7 +207,6 @@
     [UIView setAnimationDuration:0.3]; // if you want to slide up the view
     
     CGRect rect = viewMovedUp.frame;
-  
     rect.origin.y =  SCREEN_HEIGHT_PORTRAIT- viewMovedUp.bounds.size.height -HEIGHT_KEYBOARD;
     
     viewMovedUp.frame = rect;
@@ -277,15 +214,32 @@
     [UIView commitAnimations];
 }
 
-
 #pragma mark - UITextFieldDelegate
 -(void)textFieldDidBeginEditing:(UITextField *)sender
 {
-    if ([sender isEqual:_txtSignInEmail])
-    {
-      
-    }
+   
 }
 
+#pragma mark - UIScrollViewDelegate
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView{
+    CGPoint point;
+    point.y = 0;
+    point.x =  _scrollContent.contentOffset.x/1.6;
+    
+    [_scrollBackground setContentOffset:point];
+    
+    int page = _scrollContent.contentOffset.x / SCREEN_WIDTH_PORTRAIT;
+    [_pageControl setCurrentPage:page];
+}
 
+#pragma mark -  Sign Up View Delegate
+- (void)loginSuccess{
+    
+    TableViewController *controller = [self.storyboard instantiateViewControllerWithIdentifier:@"TableIdentifier"];
+    [self.navigationController pushViewController:controller animated:YES];
+}
+
+- (void) resgisterSuccess{
+    [self loginSuccess];
+}
 @end

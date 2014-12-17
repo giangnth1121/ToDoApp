@@ -8,28 +8,20 @@
 
 #import <UIKit/UIKit.h>
 
-@interface LoginViewController : BaseViewController <UITextFieldDelegate>{
+@interface LoginViewController : BaseViewController <UITextFieldDelegate, UIScrollViewDelegate>{
 
-    IBOutlet UIView *_viewSignUp;
-    IBOutlet UIView *_viewSignIn;
+    __weak IBOutlet UIScrollView *_scrollBackground;
+    __weak IBOutlet UIScrollView *_scrollContent;
     
-    IBOutlet UITextField *_txtSignInEmail;
-    IBOutlet UITextField *_txtSignInPassWord;
-    
-    IBOutlet UITextField *_txtSignUpEmail;
-    IBOutlet UITextField *_txtSignUpPassWord;
-    
+    IBOutlet UIView *_viewContent;
 }
-
 
 @property (nonatomic, strong) IBOutlet UIButton *btnSignIn;
 @property (nonatomic, strong) IBOutlet UIButton *btnSignUp;
 @property (nonatomic, strong) IBOutlet UIButton *btnSignInFacebook;
 
-- (IBAction)showSignInPressed:(id)sender;
-- (IBAction)showSignUpPressed:(id)sender;
-- (IBAction)signInWithFaceBookPressed:(id)sender;
-- (IBAction)signInPressed:(id)sender;
-- (IBAction)signUpPressed:(id)sender;
+- (IBAction)showSignInViewTapped:(id)sender;
+- (IBAction)showSignUpViewTapped:(id)sender;
+- (IBAction)signInWithFaceBookTapped:(id)sender;
 
 @end

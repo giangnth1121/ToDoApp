@@ -103,7 +103,7 @@
                                                       NSLog(@"register success");
                                                } failure:^(ResponseObject *failureObject) {
                                                    //NSLog(@"register fail:");
-                                                   NSLog(@"Register Device error:%@",failureObject.message);
+                                                   //NSLog(@"Register Device error:%@",failureObject.message);
                                                }];
 }
 
@@ -133,7 +133,7 @@
                                              [self sessionStateChanged:session
                                                                  state:state
                                                                  error:error];
-                                         }];
+                                        }];
 }
 
 /*
