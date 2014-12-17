@@ -73,18 +73,20 @@
             User *userObj = [User createWithId:stringCheckNull([profile objectForKey:@"uid"])];
             [userObj setcontent:profile];
             [DataManager saveAllChanges];
-//            
-//            TableViewController *controller = [self.storyboard instantiateViewControllerWithIdentifier:@"TableIdentifier"];
-//            [self.navigationController pushViewController:controller animated:YES];
+            
+            if (self.delegate) {
+                [self.delegate resgisterSuccess];
+            }
             
             [Util showAlertWithMessage:ALERT_REGISTER_SUCCESS delegate:nil];
             [[Util sharedUtil] hideLoadingView];
         } else {
+            
             NSString *message = [responseObject.data objectForKey:KEY_MESSAGE];
             [Util showAlert:ALERT_ERROR message:message delegate:self];
-            [[Util sharedUtil] hideLoadingView];
+           
         }
-        
+        [[Util sharedUtil] hideLoadingView];
     };
     
     void(^failBlock)(ResponseObject *) = ^void(ResponseObject *responseObject) {

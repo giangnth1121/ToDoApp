@@ -5,13 +5,7 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SignInView">
-            <connections>
-                <outlet property="_btnSignIn" destination="VQq-UL-Jc7" id="iIA-IQ-loh"/>
-                <outlet property="_txtEmail" destination="MBh-4r-x2O" id="WUf-9J-Fc6"/>
-                <outlet property="_txtPassWord" destination="B9A-fr-5BP" id="B9z-l1-hSO"/>
-            </connections>
-        </placeholder>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view contentMode="scaleToFill" id="ayf-ay-69l" userLabel="SingIn" customClass="SignInView">
             <rect key="frame" x="0.0" y="0.0" width="320" height="160"/>
@@ -45,12 +39,17 @@
                         <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
                     <connections>
-                        <action selector="signInTapped:" destination="-1" eventType="touchUpInside" id="ui0-k5-JBu"/>
+                        <action selector="signInTapped:" destination="ayf-ay-69l" eventType="touchUpInside" id="45y-Bx-L15"/>
                     </connections>
                 </button>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="_btnSignIn" destination="VQq-UL-Jc7" id="ZmU-XY-yWa"/>
+                <outlet property="_txtEmail" destination="MBh-4r-x2O" id="xES-Wl-vq5"/>
+                <outlet property="_txtPassWord" destination="B9A-fr-5BP" id="mTT-MY-U9j"/>
+            </connections>
         </view>
     </objects>
     <resources>

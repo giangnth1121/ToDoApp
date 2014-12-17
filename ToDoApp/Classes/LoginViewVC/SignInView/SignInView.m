@@ -85,8 +85,9 @@
             if (self.delegate) {
                 [self.delegate loginSuccess];
             }
-            
-            
+        } else {
+            NSString *message = [responseObject.data objectForKey:KEY_MESSAGE];
+            [Util showAlert:ALERT_ERROR message:message delegate:self];
         }
         [[Util sharedUtil] hideLoadingView];
         

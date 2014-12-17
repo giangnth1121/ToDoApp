@@ -118,7 +118,7 @@
     
     NSMutableDictionary *params = [NSMutableDictionary dictionary];
     
-    _setObjectToDictionary(params, @"account", email);
+    _setObjectToDictionary(params, @"email", email);
     _setObjectToDictionary(params, @"password", password);
     _setObjectToDictionary(params, @"device_id", UNIQUEIDENTIFIER_FOR_VENDOR);
     
