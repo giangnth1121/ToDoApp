@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		EB017E761A4134AA004FCD42 /* todo_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = EB017E751A4134AA004FCD42 /* todo_icon.png */; };
+		EB017E781A4134BA004FCD42 /* todo_icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = EB017E771A4134BA004FCD42 /* todo_icon@2x.png */; };
+		EB017E7B1A4137B3004FCD42 /* Util.m in Sources */ = {isa = PBXBuildFile; fileRef = EB017E7A1A4137B3004FCD42 /* Util.m */; };
 		EB8A0BB51A3BFA2B007D9D33 /* BaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EB8A0BB41A3BFA2B007D9D33 /* BaseViewController.m */; };
 		EB8F72141A3AF31D00E8128B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = EB8F72131A3AF31D00E8128B /* main.m */; };
 		EB8F72171A3AF31D00E8128B /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = EB8F72161A3AF31D00E8128B /* AppDelegate.m */; };
@@ -200,7 +203,6 @@
 		EBDFE3791A3BEDAF000CF532 /* UIScrollView+SVPullToRefresh.m in Sources */ = {isa = PBXBuildFile; fileRef = EBDFE2891A3BEDAE000CF532 /* UIScrollView+SVPullToRefresh.m */; };
 		EBDFE37A1A3BEDAF000CF532 /* UIViewController+CWPopup.m in Sources */ = {isa = PBXBuildFile; fileRef = EBDFE28B1A3BEDAE000CF532 /* UIViewController+CWPopup.m */; };
 		EBDFE37B1A3BEDAF000CF532 /* V8HorizontalPickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = EBDFE28E1A3BEDAE000CF532 /* V8HorizontalPickerView.m */; };
-		EBDFE3931A3BEDAF000CF532 /* Util.m in Sources */ = {isa = PBXBuildFile; fileRef = EBDFE2C71A3BEDAE000CF532 /* Util.m */; };
 		EBDFE3951A3BF0AC000CF532 /* libxml2.2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = EBDFE3941A3BF0AC000CF532 /* libxml2.2.dylib */; };
 		EBDFE3971A3BF0B8000CF532 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EBDFE3961A3BF0B8000CF532 /* CoreGraphics.framework */; };
 		EBDFE39B1A3BF0C5000CF532 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EBDFE39A1A3BF0C5000CF532 /* SystemConfiguration.framework */; };
@@ -250,7 +252,6 @@
 		EBDFE43A1A3BF5E8000CF532 /* MagicalRecord.m in Sources */ = {isa = PBXBuildFile; fileRef = EBDFE4191A3BF5E8000CF532 /* MagicalRecord.m */; };
 		EBDFE43B1A3BF5E8000CF532 /* NSArray+Accessors.m in Sources */ = {isa = PBXBuildFile; fileRef = EBDFE41E1A3BF5E8000CF532 /* NSArray+Accessors.m */; };
 		EBDFE43C1A3BF5E8000CF532 /* NSManagedObject+ActiveRecord.m in Sources */ = {isa = PBXBuildFile; fileRef = EBDFE4201A3BF5E8000CF532 /* NSManagedObject+ActiveRecord.m */; };
-		EBDFE43D1A3BF787000CF532 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EBDFE3981A3BF0BD000CF532 /* UIKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -264,6 +265,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		EB017E751A4134AA004FCD42 /* todo_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = todo_icon.png; sourceTree = "<group>"; };
+		EB017E771A4134BA004FCD42 /* todo_icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "todo_icon@2x.png"; sourceTree = "<group>"; };
+		EB017E791A4137B3004FCD42 /* Util.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Util.h; sourceTree = "<group>"; };
+		EB017E7A1A4137B3004FCD42 /* Util.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Util.m; sourceTree = "<group>"; };
 		EB8A0BB31A3BFA2B007D9D33 /* BaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseViewController.h; sourceTree = "<group>"; };
 		EB8A0BB41A3BFA2B007D9D33 /* BaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseViewController.m; sourceTree = "<group>"; };
 		EB8F720E1A3AF31D00E8128B /* ToDoApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ToDoApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -497,11 +502,8 @@
 		EBDFE2C21A3BEDAE000CF532 /* DefineText.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DefineText.h; sourceTree = "<group>"; };
 		EBDFE2C31A3BEDAE000CF532 /* SWGlobal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWGlobal.h; sourceTree = "<group>"; };
 		EBDFE2C41A3BEDAE000CF532 /* SWMacro.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWMacro.h; sourceTree = "<group>"; };
-		EBDFE2C61A3BEDAE000CF532 /* Util.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Util.h; sourceTree = "<group>"; };
-		EBDFE2C71A3BEDAE000CF532 /* Util.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Util.m; sourceTree = "<group>"; };
 		EBDFE3941A3BF0AC000CF532 /* libxml2.2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxml2.2.dylib; path = usr/lib/libxml2.2.dylib; sourceTree = SDKROOT; };
 		EBDFE3961A3BF0B8000CF532 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
-		EBDFE3981A3BF0BD000CF532 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		EBDFE39A1A3BF0C5000CF532 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		EBDFE39D1A3BF325000CF532 /* ToDoApp-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "ToDoApp-Prefix.pch"; sourceTree = "<group>"; };
 		EBDFE3A01A3BF3FE000CF532 /* APIClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = APIClient.h; sourceTree = "<group>"; };
@@ -607,7 +609,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EBDFE43D1A3BF787000CF532 /* UIKit.framework in Frameworks */,
 				EBDFE39B1A3BF0C5000CF532 /* SystemConfiguration.framework in Frameworks */,
 				EBDFE3971A3BF0B8000CF532 /* CoreGraphics.framework in Frameworks */,
 				EBDFE3951A3BF0AC000CF532 /* libxml2.2.dylib in Frameworks */,
@@ -641,7 +642,6 @@
 				EBDFE3BB1A3BF450000CF532 /* Categories */,
 				EBDFE39E1A3BF3FE000CF532 /* Model */,
 				EBDFE39A1A3BF0C5000CF532 /* SystemConfiguration.framework */,
-				EBDFE3981A3BF0BD000CF532 /* UIKit.framework */,
 				EBDFE3961A3BF0B8000CF532 /* CoreGraphics.framework */,
 				EBDFE3941A3BF0AC000CF532 /* libxml2.2.dylib */,
 				EBDFE1301A3BEDAD000CF532 /* 3Party */,
@@ -737,6 +737,7 @@
 		EBDFDFFA1A3BE71E000CF532 /* image */ = {
 			isa = PBXGroup;
 			children = (
+				EB017E751A4134AA004FCD42 /* todo_icon.png */,
 				EB9197F61A3C07EF002788CE /* login&signup.png */,
 				EB9197F41A3C0742002788CE /* facebook_big.png */,
 				EBDFE12E1A3BECCD000CF532 /* background_app.jpg */,
@@ -792,6 +793,7 @@
 		EBDFE0241A3BE71E000CF532 /* image@2x */ = {
 			isa = PBXGroup;
 			children = (
+				EB017E771A4134BA004FCD42 /* todo_icon@2x.png */,
 				EBDFE1151A3BE783000CF532 /* Login Button Menu@2X.png */,
 				EBDFE1161A3BE783000CF532 /* Login with Facebook icon@2x.png */,
 				EBDFE1171A3BE784000CF532 /* Sign Up Button Menu@2X.png */,
@@ -1085,8 +1087,8 @@
 		EBDFE2C51A3BEDAE000CF532 /* Utilities Classes */ = {
 			isa = PBXGroup;
 			children = (
-				EBDFE2C61A3BEDAE000CF532 /* Util.h */,
-				EBDFE2C71A3BEDAE000CF532 /* Util.m */,
+				EB017E791A4137B3004FCD42 /* Util.h */,
+				EB017E7A1A4137B3004FCD42 /* Util.m */,
 			);
 			path = "Utilities Classes";
 			sourceTree = "<group>";
@@ -1329,6 +1331,7 @@
 				TargetAttributes = {
 					EB8F720D1A3AF31D00E8128B = {
 						CreatedOnToolsVersion = 6.1;
+						DevelopmentTeam = 9BRJVPJ2W4;
 					};
 					EB8F72261A3AF31D00E8128B = {
 						CreatedOnToolsVersion = 6.1;
@@ -1422,6 +1425,7 @@
 				EBDFE0911A3BE71E000CF532 /* clear.png in Resources */,
 				EBDFE10A1A3BE71E000CF532 /* Default-SwipeAbort.caf in Resources */,
 				EBDFE0E71A3BE71E000CF532 /* welcome-tablet-frame@2x.png in Resources */,
+				EB017E761A4134AA004FCD42 /* todo_icon.png in Resources */,
 				EB8F72221A3AF31D00E8128B /* LaunchScreen.xib in Resources */,
 				EBDFE0961A3BE71E000CF532 /* IAP-Locked.png in Resources */,
 				EBDFE08B1A3BE71E000CF532 /* Alert_Button_Cancel.png in Resources */,
@@ -1453,6 +1457,7 @@
 				EBDFE3501A3BEDAF000CF532 /* Done.png in Resources */,
 				EBDFE0AF1A3BE71E000CF532 /* welcome-import-transfer.png in Resources */,
 				EBDFE0CF1A3BE71E000CF532 /* Realmac_Logo@2x.png in Resources */,
+				EB017E781A4134BA004FCD42 /* todo_icon@2x.png in Resources */,
 				EBDFE3701A3BEDAF000CF532 /* arrow@2x.png in Resources */,
 				EB9197F71A3C07EF002788CE /* login&signup.png in Resources */,
 				EBDFE0AD1A3BE71E000CF532 /* welcome-import-ipad.png in Resources */,
@@ -1601,8 +1606,8 @@
 				EBDFE4321A3BF5E8000CF532 /* NSPersistentStore+MagicalRecord.m in Sources */,
 				EBDFE3CD1A3BF494000CF532 /* UIFont+Ext.m in Sources */,
 				EBDFE2CC1A3BEDAE000CF532 /* AFNetworkActivityIndicatorManager.m in Sources */,
+				EB017E7B1A4137B3004FCD42 /* Util.m in Sources */,
 				EBDFE42B1A3BF5E8000CF532 /* NSManagedObject+MagicalRecord.m in Sources */,
-				EBDFE3931A3BEDAF000CF532 /* Util.m in Sources */,
 				EBDFE4271A3BF5E8000CF532 /* NSString+MagicalDataImport.m in Sources */,
 				EBDFE3B81A3BF3FE000CF532 /* SwiftModel.xcdatamodeld in Sources */,
 				EBDFE3CE1A3BF494000CF532 /* UIImage+Ext.m in Sources */,
@@ -1735,6 +1740,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Tan Le Xuan (RQGWHJN9AK)";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/3Party",
@@ -1744,6 +1751,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "f08bb3d3-7a0b-46a6-a671-01baee5583fa";
 			};
 			name = Debug;
 		};
@@ -1751,6 +1759,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/3Party",
@@ -1760,6 +1770,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "f08bb3d3-7a0b-46a6-a671-01baee5583fa";
 			};
 			name = Release;
 		};

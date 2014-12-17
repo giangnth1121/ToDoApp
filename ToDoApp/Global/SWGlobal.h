@@ -70,6 +70,7 @@
 #define KEY_INFO                @"info"
 #define KEY_CODE                @"code"
 #define KEY_DATA                @"data"
+#define KEY_MESSAGE             @"message"
 #define ALERT_NETWORK_ERR       @"Network Error!"
 
 

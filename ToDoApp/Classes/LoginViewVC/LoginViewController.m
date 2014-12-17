@@ -169,7 +169,7 @@
     void(^failBlock)(ResponseObject *) = ^void(ResponseObject *responseObject) {
         
         [[Util sharedUtil] hideLoadingView];
-        [Util showMessage:nil withTitle:ALERT_NETWORK_ERROR];
+       
     };
     
     
@@ -213,6 +213,7 @@
     }
     
     void(^successBlock)(ResponseObject *) = ^void(ResponseObject *responseObject) {
+        NSLog(@"responseObject data :%@", responseObject.data);
         if ([[NSString stringWithFormat:@"%@",[responseObject.data objectForKey:KEY_CODE]] isEqualToString:@"0"]) {
             
             NSDictionary *data = [responseObject.data objectForKey:KEY_DATA];
@@ -228,7 +229,12 @@
             
             TableViewController *controller = [self.storyboard instantiateViewControllerWithIdentifier:@"TableIdentifier"];
             [self.navigationController pushViewController:controller animated:YES];
-            [Util showMessage:nil withTitle:ALERT_REGISTER_SUCCESS];
+            
+            [Util showAlertWithMessage:ALERT_REGISTER_SUCCESS delegate:nil];
+        } else {
+            NSString *message = [responseObject.data objectForKey:KEY_MESSAGE];
+
+            [Util showAlert:ALERT_ERROR message:message delegate:self];
         }
         
     };
@@ -236,9 +242,10 @@
     void(^failBlock)(ResponseObject *) = ^void(ResponseObject *responseObject) {
         
         [[Util sharedUtil] hideLoadingView];
-        [Util showMessage:nil withTitle:ALERT_NETWORK_ERROR];
+        [Util showAlertError:ALERT_NETWORK_ERROR];
         
     };
+    
     [[Util sharedUtil] showLoadingView];
     [[APIClient sharedClient] userRegister:_txtSignUpEmail.text
                                   password:_txtSignUpPassWord.text

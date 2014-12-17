@@ -31,12 +31,29 @@
     } else {
         [[UIApplication sharedApplication] registerForRemoteNotificationTypes:UIRemoteNotificationTypeSound | UIRemoteNotificationTypeAlert | UIRemoteNotificationTypeBadge];
     }
+
     
     //[[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleDefault];
 
     // Override point for customization after application launch.
     return YES;
 }
+#ifdef __IPHONE_8_0
+- (void)application:(UIApplication *)application didRegisterUserNotificationSettings:(UIUserNotificationSettings *)notificationSettings
+{
+    //register to receive notifications
+    [application registerForRemoteNotifications];
+}
+
+- (void)application:(UIApplication *)application handleActionWithIdentifier:(NSString *)identifier forRemoteNotification:(NSDictionary *)userInfo completionHandler:(void(^)())completionHandler
+{
+    //handle the actions
+    if ([identifier isEqualToString:@"declineAction"]){
+    }
+    else if ([identifier isEqualToString:@"answerAction"]){
+    }
+}
+#endif
 
 - (void)applicationWillResignActive:(UIApplication *)application {
     // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
@@ -62,14 +79,6 @@
 
 #pragma mark - notification delegate
 
-- (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo{
-    
-    
-    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"" message:[NSString stringWithFormat:@"userInfo %@",userInfo] delegate:nil cancelButtonTitle:@"OK" otherButtonTitles: nil];
-    [alert show];
-    
-}
-
 - (void)application:(UIApplication *)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)token{
     
     NSLog(@"Inform the server of this device token: %@", token);
@@ -87,21 +96,26 @@
     int typeID = [strTypeID intValue];
     NSString *strRegID = @"1";
     int regID = [strRegID intValue];
-    
-    
     [[APIClient sharedClient] registerDeviceWithTypeID:typeID
                                                  regID:regID
                                                success:^(ResponseObject *responseObject) {
+                                                   
                                                       NSLog(@"register success");
-        
                                                } failure:^(ResponseObject *failureObject) {
-                                                   NSLog(@"register fail:");
+                                                   //NSLog(@"register fail:");
+                                                   NSLog(@"Register Device error:%@",failureObject.message);
                                                }];
-    
 }
 
 - (void)application:(UIApplication *)application didFailToRegisterForRemoteNotificationsWithError:(NSError *)error NS_AVAILABLE_IOS(3_0) {
     NSLog(@"register fail: %@",error);
+}
+
+- (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo{
+    
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"" message:[NSString stringWithFormat:@"userInfo %@",userInfo] delegate:nil cancelButtonTitle:@"OK" otherButtonTitles: nil];
+    [alert show];
+    
 }
 
 #pragma mark-  FB SDK
@@ -164,7 +178,7 @@
     
     if (FBSession.activeSession.isOpen) {
         
-        [[Util sharedUtil] showLoadingOnView:self.window withLable:@"Loading..."];
+        [[Util sharedUtil] showLoadingView];
         [[FBRequest requestForMe] startWithCompletionHandler:
          ^(FBRequestConnection *connection, NSDictionary<FBGraphUser> *user, NSError *error) {
              if (!error) {

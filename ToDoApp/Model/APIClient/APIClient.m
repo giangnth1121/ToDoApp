@@ -216,18 +216,20 @@
     _setObjectToDictionary(params, @"dtype_id", strTypeID);
     _setObjectToDictionary(params, @"reg_id", strRegID);
     
-    NSString *logedIn = [[NSUserDefaults standardUserDefaults] objectForKey:kIS_LOGED];
-    if ([logedIn isEqualToString:@"YES"]) {
-        User *user = [User currentUser];
-        _setObjectToDictionary(params, @"uid", [user.uid stringValue]);
-    }
-    
+    NSLog(@"params:%@", params);
+//    NSString *logedIn = [[NSUserDefaults standardUserDefaults] objectForKey:kIS_LOGED];
+//    if ([logedIn isEqualToString:@"YES"]) {
+//        User *user = [User currentUser];
+//        _setObjectToDictionary(params, @"uid", [user.uid stringValue]);
+//    }
+//    
     
     [self postPath:path parameters:params success:^(AFHTTPRequestOperation *operation, id responseObject) {
         [self processOperation:operation withData:responseObject success:blockSuccess failure:blockFailure];
         
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         [self processOperation:operation withData:nil success:blockSuccess failure:blockFailure];
+        NSLog(@"Register Device error:%@",error);
     }];
     
 }

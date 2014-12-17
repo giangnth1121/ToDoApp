@@ -2,15 +2,14 @@
 //  SWUtil.h
 //  SRPLS
 //
-//  Created by Tan Le on 7/20/14.
-//  Copyright (c) 2014 Tan Le. All rights reserved.
+//  Created by Joy Aether Limited on 7/20/14.
+//  Copyright (c) 2014 Joyaether.com. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
+#import "MBProgressHUD.h"
 @class AppDelegate;
 #import "GCDispatch.h"
-#import "MBProgressHUD.h"
-
 static inline NSString *stringCheckNull(NSString *str)
 {
     if ([str isKindOfClass:[NSNull class]]) {
@@ -25,25 +24,25 @@ static inline NSString *stringWithoutSpace(NSString *str)
     NSString *result = [str stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
     return result;
 }
-
 @interface Util : NSObject
 
-@property (nonatomic,strong) MBProgressHUD *HUD;
+@property (strong, nonatomic) MBProgressHUD *progressView;
+
+- (void)showLoadingView;
+- (void)showLoadingViewWithTitle:(NSString *)title;
+- (void)hideLoadingView;
 
 + (Util *)sharedUtil;
 + (AppDelegate *)appDelegate;
 
++ (void)showAlert:(NSString *)title message:(NSString *)message delegate:(id)delegate;
++ (void)showAlertWithMessage:(NSString *)message delegate:(id)delegate;
++ (void)showAlertWithMessage:(NSString *)message tag:(NSInteger)tag delegate:(id)delegate;
++ (void)showAlertError:(NSString *)title;
 /*
  * Making univesal Viewcontroller with two .xib UI
  */
 + (UIViewController*)newUniversalViewControllerWithClassName:(NSString*)className;
-
-- (void)showLoadingOnView:(UIView *)parentView withLable:(NSString *)label;
-- (void)showLoadingView;
-- (void)hideLoadingView;
-
-+ (void)showMessage:(NSString *)message withTitle:(NSString *)title;
-
 
 + (UIColor *) getColor: (NSString *) RGBcolor;
 + (BOOL) checkNullValues:(id) value;
@@ -54,17 +53,13 @@ static inline NSString *stringWithoutSpace(NSString *str)
 + (void) saveStatusLogin:(NSString *) flag;
 + (NSString *) getStatusLogin;
 
-+ (void) saveDataAvatar:(NSData *) data;
-+ (NSData *) getDataAvatar;
 + (CGSize) getSizeText:(NSString *)text withWidth:(float)width andFont:(UIFont *) font;
-+ (UIImage *)imageResize :(UIImage*)img andResizeTo:(CGSize)newSize;
-+ (UIImage *) convertImage:(UIImage *)image withWidth:(float) width;
 + (UIImage *) convertImage:(UIImage *)image withHeight:(float) height;
 + (NSAttributedString*) underlineStyleSingleWithText:(NSString *)text;
 + (NSAttributedString*) underLineBottomSignleWithText:(NSString*)text;
 + (NSString *) getDeviceToken;
 + (void) saveDeviceToken:(NSString *) token;
-+ (NSString *) getImageSaveParth:(NSString *) imageName;
-+ (BOOL) deleteAllImageSell;
+
+
 
 @end
