@@ -9,9 +9,13 @@
 #import <UIKit/UIKit.h>
 #import "SlideNavigationController.h"
 #import <FacebookSDK/FacebookSDK.h>
+#import "NoteTableViewController.h"
+#import "LoginViewController.h"
 
-@interface AppDelegate : UIResponder <UIApplicationDelegate>
-
+@interface AppDelegate : UIResponder <UIApplicationDelegate, UINavigationControllerDelegate>
+{
+    LoginViewController *loginVC;
+}
 @property (strong, nonatomic) UIWindow *window;
 @property (nonatomic, strong) SlideNavigationController *rootNav;
 @property (strong, nonatomic) FBSession *session;//Containt FB session.

@@ -38,6 +38,11 @@
 #import "UIImageView+Ext.h"
 #import "UIButton+Bootstrap.h"
 #import "UIImageView+AFNetworking.h"
+#import "NoteObject.h"
+#import "NoteGroupObject.h"
+#import "NoteGroupDataSource.h"
+#import "NoteDataSource.h"
+#import "DatabaseHelper.h"
 
 /*
  *  Import ViewControllers

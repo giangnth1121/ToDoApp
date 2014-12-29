@@ -6,14 +6,14 @@
 //  Copyright (c) 2014 NGUYENHAGIANG. All rights reserved.
 //
 
-#import "TableViewController.h"
+#import "NoteTableViewController.h"
 
-@interface TableViewController ()
+@interface NoteTableViewController ()
 
 @property (strong, nonatomic) IBOutlet UITableView *noteTableView;
 @end
 
-@implementation TableViewController
+@implementation NoteTableViewController
 
 - (void)viewWillAppear:(BOOL)animated
 {
@@ -50,4 +50,5 @@
     cell.textLabel.text = @"Task 1,2,3";
     return cell;
 }
+
 @end

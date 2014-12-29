@@ -19,9 +19,12 @@
 @property (nonatomic, strong) IBOutlet UIButton *btnSignIn;
 @property (nonatomic, strong) IBOutlet UIButton *btnSignUp;
 @property (nonatomic, strong) IBOutlet UIButton *btnSignInFacebook;
+@property (nonatomic, assign) NSInteger uID;
 
 - (IBAction)showSignInViewTapped:(id)sender;
 - (IBAction)showSignUpViewTapped:(id)sender;
 - (IBAction)signInWithFaceBookTapped:(id)sender;
 
+- (void)autologinAcount;
+- (void)autologinFBAccount;
 @end

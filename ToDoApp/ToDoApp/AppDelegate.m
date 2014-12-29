@@ -31,13 +31,29 @@
     } else {
         [[UIApplication sharedApplication] registerForRemoteNotificationTypes:UIRemoteNotificationTypeSound | UIRemoteNotificationTypeAlert | UIRemoteNotificationTypeBadge];
     }
-
     
     //[[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleDefault];
 
     // Override point for customization after application launch.
+    NSString *isLogged = [[NSUserDefaults standardUserDefaults ]objectForKey:kIS_LOGED];
+    if ([isLogged isEqualToString:@"YES"]) {
+        
+        NSString *typeLoged = [[NSUserDefaults standardUserDefaults] objectForKey:user_logged_type];
+        
+        if ([typeLoged  isEqualToString:@"1"]) { //Vinted account
+            
+            [loginVC autologinAcount];
+        }
+        else {//Social account
+            
+            [loginVC autologinFBAccount];
+        }
+    }
+    
     return YES;
 }
+
+
 #ifdef __IPHONE_8_0
 - (void)application:(UIApplication *)application didRegisterUserNotificationSettings:(UIUserNotificationSettings *)notificationSettings
 {

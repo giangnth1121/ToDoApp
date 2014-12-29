@@ -7,7 +7,7 @@
 //
 
 #import "SignUpView.h"
-#import "TableViewController.h"
+#import "NoteTableViewController.h"
 @implementation SignUpView
 @synthesize delegate;
 - (id)init{

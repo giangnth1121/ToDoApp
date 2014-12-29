@@ -26,6 +26,7 @@
 }
 
 @property (nonatomic, unsafe_unretained) id <SignInViewDelegate> delegate;
+@property (nonatomic, assign) NSInteger uID;
 - (IBAction)signInTapped:(id)sender;
 
 @end
