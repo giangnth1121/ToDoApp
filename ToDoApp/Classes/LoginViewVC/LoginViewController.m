@@ -67,7 +67,7 @@
     UITapGestureRecognizer *tapRecognizer = [[UITapGestureRecognizer alloc]
                                              initWithTarget:self action:@selector(resetFrameView:)];
     [self.view addGestureRecognizer:tapRecognizer];
-    NSArray *arrayImages = [[NSArray alloc] initWithObjects:@"introduce1@2x.png", @"introduce2@2x.png", @"introduce3@2x.png", @"introduce4@2x.png", nil];
+    NSArray *arrayImages = [[NSArray alloc] initWithObjects:@"value-prop-0@2x.png", @"value-prop-1@2x.png", @"value-prop-2@2x.png", @"value-prop-3@2x.png", nil];
     
     UIImageView *imageBackground  = [[UIImageView alloc] initWithFrame:CGRectMake(-SCREEN_WIDTH_PORTRAIT, 0, SCREEN_WIDTH_PORTRAIT* [arrayImages count], SCREEN_HEIGHT_PORTRAIT)];
     //imageBackground.image = [UIImage imageNamed:@"bg@2x.png"];

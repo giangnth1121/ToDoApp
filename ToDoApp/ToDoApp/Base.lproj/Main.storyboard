@@ -103,7 +103,7 @@
                 <viewController storyboardIdentifier="TableIdentifier" useStoryboardIdentifierAsRestorationIdentifier="YES" id="trC-BR-Upa" customClass="NoteTableViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Ubt-pe-0H8">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxY="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" id="M30-Hi-aS2">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
@@ -291,7 +291,7 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="9" y="76"/>
+            <point key="canvasLocation" x="-194" y="70"/>
         </scene>
     </scenes>
     <resources>

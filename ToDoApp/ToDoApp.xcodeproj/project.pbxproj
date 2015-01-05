@@ -48,13 +48,13 @@
 		EBADF1ED1A428E3600CDEBF4 /* GradientBackground.m in Sources */ = {isa = PBXBuildFile; fileRef = EBADF1EB1A428E3600CDEBF4 /* GradientBackground.m */; };
 		EBADF1F31A428E3C00CDEBF4 /* NoteGroupTabelViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = EBADF1F01A428E3C00CDEBF4 /* NoteGroupTabelViewCell.m */; };
 		EBADF1F41A428E3C00CDEBF4 /* NoteTabelViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = EBADF1F21A428E3C00CDEBF4 /* NoteTabelViewCell.m */; };
-		EBADF1FB1A428E4500CDEBF4 /* NoteDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = EBADF1F81A428E4500CDEBF4 /* NoteDataSource.m */; };
-		EBADF1FC1A428E4500CDEBF4 /* NoteGroupDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = EBADF1FA1A428E4500CDEBF4 /* NoteGroupDataSource.m */; };
 		EBADF2061A428E4C00CDEBF4 /* NoteGroupObject.m in Sources */ = {isa = PBXBuildFile; fileRef = EBADF2011A428E4C00CDEBF4 /* NoteGroupObject.m */; };
 		EBADF2071A428E4C00CDEBF4 /* NoteObject.m in Sources */ = {isa = PBXBuildFile; fileRef = EBADF2031A428E4C00CDEBF4 /* NoteObject.m */; };
 		EBADF2081A428E4C00CDEBF4 /* notes in Resources */ = {isa = PBXBuildFile; fileRef = EBADF2041A428E4C00CDEBF4 /* notes */; };
 		EBADF20B1A42964B00CDEBF4 /* DatabaseHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = EBADF20A1A42964B00CDEBF4 /* DatabaseHelper.m */; };
 		EBADF20D1A42966300CDEBF4 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = EBADF20C1A42966300CDEBF4 /* libsqlite3.dylib */; };
+		EBB1A7081A5A85B200207652 /* NoteDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = EBB1A7051A5A85B200207652 /* NoteDataSource.m */; };
+		EBB1A7091A5A85B200207652 /* NoteGroupDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = EBB1A7071A5A85B200207652 /* NoteGroupDataSource.m */; };
 		EBDFE0891A3BE71E000CF532 /* AddListPlus.png in Resources */ = {isa = PBXBuildFile; fileRef = EBDFDFFB1A3BE71E000CF532 /* AddListPlus.png */; };
 		EBDFE08A1A3BE71E000CF532 /* AddListPlusPressed.png in Resources */ = {isa = PBXBuildFile; fileRef = EBDFDFFC1A3BE71E000CF532 /* AddListPlusPressed.png */; };
 		EBDFE08B1A3BE71E000CF532 /* Alert_Button_Cancel.png in Resources */ = {isa = PBXBuildFile; fileRef = EBDFDFFD1A3BE71E000CF532 /* Alert_Button_Cancel.png */; };
@@ -366,11 +366,6 @@
 		EBADF1F01A428E3C00CDEBF4 /* NoteGroupTabelViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NoteGroupTabelViewCell.m; sourceTree = "<group>"; };
 		EBADF1F11A428E3C00CDEBF4 /* NoteTabelViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NoteTabelViewCell.h; sourceTree = "<group>"; };
 		EBADF1F21A428E3C00CDEBF4 /* NoteTabelViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NoteTabelViewCell.m; sourceTree = "<group>"; };
-		EBADF1F61A428E4500CDEBF4 /* ExternTabelDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExternTabelDataSource.h; sourceTree = "<group>"; };
-		EBADF1F71A428E4500CDEBF4 /* NoteDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NoteDataSource.h; sourceTree = "<group>"; };
-		EBADF1F81A428E4500CDEBF4 /* NoteDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NoteDataSource.m; sourceTree = "<group>"; };
-		EBADF1F91A428E4500CDEBF4 /* NoteGroupDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NoteGroupDataSource.h; sourceTree = "<group>"; };
-		EBADF1FA1A428E4500CDEBF4 /* NoteGroupDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NoteGroupDataSource.m; sourceTree = "<group>"; };
 		EBADF2001A428E4C00CDEBF4 /* NoteGroupObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NoteGroupObject.h; sourceTree = "<group>"; };
 		EBADF2011A428E4C00CDEBF4 /* NoteGroupObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NoteGroupObject.m; sourceTree = "<group>"; };
 		EBADF2021A428E4C00CDEBF4 /* NoteObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NoteObject.h; sourceTree = "<group>"; };
@@ -379,6 +374,11 @@
 		EBADF2091A42964B00CDEBF4 /* DatabaseHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DatabaseHelper.h; sourceTree = "<group>"; };
 		EBADF20A1A42964B00CDEBF4 /* DatabaseHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DatabaseHelper.m; sourceTree = "<group>"; };
 		EBADF20C1A42966300CDEBF4 /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
+		EBB1A7031A5A85B200207652 /* ExternTabelDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExternTabelDataSource.h; sourceTree = "<group>"; };
+		EBB1A7041A5A85B200207652 /* NoteDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NoteDataSource.h; sourceTree = "<group>"; };
+		EBB1A7051A5A85B200207652 /* NoteDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NoteDataSource.m; sourceTree = "<group>"; };
+		EBB1A7061A5A85B200207652 /* NoteGroupDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NoteGroupDataSource.h; sourceTree = "<group>"; };
+		EBB1A7071A5A85B200207652 /* NoteGroupDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NoteGroupDataSource.m; sourceTree = "<group>"; };
 		EBDFDFFB1A3BE71E000CF532 /* AddListPlus.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = AddListPlus.png; sourceTree = "<group>"; };
 		EBDFDFFC1A3BE71E000CF532 /* AddListPlusPressed.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = AddListPlusPressed.png; sourceTree = "<group>"; };
 		EBDFDFFD1A3BE71E000CF532 /* Alert_Button_Cancel.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Alert_Button_Cancel.png; sourceTree = "<group>"; };
@@ -787,6 +787,7 @@
 		EB8F72051A3AF31D00E8128B = {
 			isa = PBXGroup;
 			children = (
+				EBB1A7021A5A85B200207652 /* Datasource */,
 				EBADF20C1A42966300CDEBF4 /* libsqlite3.dylib */,
 				EBADF1FD1A428E4C00CDEBF4 /* LocalDataBase */,
 				EBDFE3BB1A3BF450000CF532 /* Categories */,
@@ -901,11 +902,6 @@
 		EBADF1F51A428E4500CDEBF4 /* DataSource */ = {
 			isa = PBXGroup;
 			children = (
-				EBADF1F61A428E4500CDEBF4 /* ExternTabelDataSource.h */,
-				EBADF1F71A428E4500CDEBF4 /* NoteDataSource.h */,
-				EBADF1F81A428E4500CDEBF4 /* NoteDataSource.m */,
-				EBADF1F91A428E4500CDEBF4 /* NoteGroupDataSource.h */,
-				EBADF1FA1A428E4500CDEBF4 /* NoteGroupDataSource.m */,
 			);
 			path = DataSource;
 			sourceTree = "<group>";
@@ -922,6 +918,18 @@
 				EBADF2041A428E4C00CDEBF4 /* notes */,
 			);
 			path = LocalDataBase;
+			sourceTree = "<group>";
+		};
+		EBB1A7021A5A85B200207652 /* Datasource */ = {
+			isa = PBXGroup;
+			children = (
+				EBB1A7031A5A85B200207652 /* ExternTabelDataSource.h */,
+				EBB1A7041A5A85B200207652 /* NoteDataSource.h */,
+				EBB1A7051A5A85B200207652 /* NoteDataSource.m */,
+				EBB1A7061A5A85B200207652 /* NoteGroupDataSource.h */,
+				EBB1A7071A5A85B200207652 /* NoteGroupDataSource.m */,
+			);
+			path = Datasource;
 			sourceTree = "<group>";
 		};
 		EBDFDFF81A3BE54C000CF532 /* Classes */ = {
@@ -1797,6 +1805,7 @@
 				EBDFE2D01A3BEDAE000CF532 /* UIImageView+AFNetworking.m in Sources */,
 				EBDFE2CA1A3BEDAE000CF532 /* AFImageRequestOperation.m in Sources */,
 				EBAB54F51A440A420059EDBA /* TableViewController.m in Sources */,
+				EBB1A7081A5A85B200207652 /* NoteDataSource.m in Sources */,
 				EBDFE37A1A3BEDAF000CF532 /* UIViewController+CWPopup.m in Sources */,
 				EBDFE32F1A3BEDAF000CF532 /* GCDispatchQueue.m in Sources */,
 				EBDFE3B61A3BF3FE000CF532 /* Session.m in Sources */,
@@ -1820,7 +1829,6 @@
 				EBDFE34F1A3BEDAF000CF532 /* MBProgressHUD.m in Sources */,
 				EBDFE1251A3BE8B1000CF532 /* LoginViewController.m in Sources */,
 				EBDFE42D1A3BF5E8000CF532 /* NSManagedObjectContext+MagicalObserving.m in Sources */,
-				EBADF1FB1A428E4500CDEBF4 /* NoteDataSource.m in Sources */,
 				EBDFE43A1A3BF5E8000CF532 /* MagicalRecord.m in Sources */,
 				EBDFE4211A3BF5E8000CF532 /* MagicalImportFunctions.m in Sources */,
 				EBDFE3311A3BEDAF000CF532 /* HPGrowingTextView.m in Sources */,
@@ -1850,7 +1858,6 @@
 				EBADF1D81A42799600CDEBF4 /* JTTableViewGestureRecognizer.m in Sources */,
 				EBDFE3BA1A3BF3FE000CF532 /* User.m in Sources */,
 				EBADF1EC1A428E3600CDEBF4 /* CustomView.m in Sources */,
-				EBADF1FC1A428E4500CDEBF4 /* NoteGroupDataSource.m in Sources */,
 				EBDFE4331A3BF5E8000CF532 /* NSPersistentStoreCoordinator+MagicalRecord.m in Sources */,
 				EBDFE4221A3BF5E8000CF532 /* NSAttributeDescription+MagicalDataImport.m in Sources */,
 				EBDFE3DF1A3BF555000CF532 /* NSString+RemoveNumBer.m in Sources */,
@@ -1872,6 +1879,7 @@
 				EBDFE2CC1A3BEDAE000CF532 /* AFNetworkActivityIndicatorManager.m in Sources */,
 				EB017E7B1A4137B3004FCD42 /* Util.m in Sources */,
 				EBDFE42B1A3BF5E8000CF532 /* NSManagedObject+MagicalRecord.m in Sources */,
+				EBB1A7091A5A85B200207652 /* NoteGroupDataSource.m in Sources */,
 				EBDFE4271A3BF5E8000CF532 /* NSString+MagicalDataImport.m in Sources */,
 				EBDFE3B81A3BF3FE000CF532 /* SwiftModel.xcdatamodeld in Sources */,
 				EBDFE3CE1A3BF494000CF532 /* UIImage+Ext.m in Sources */,

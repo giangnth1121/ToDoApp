@@ -89,7 +89,7 @@
 {
     NoteGroupObject* group = _content[index];
     group.name = name;
-   // [[DatabaseHelper instance] updateNoteGroup:group];
+    [[DatabaseHelper instance] updateNoteGroup:group];
 }
 
 - (void)addNewItem

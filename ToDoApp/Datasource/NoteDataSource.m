@@ -8,7 +8,6 @@
 
 #import "NoteDataSource.h"
 #import "NoteTabelViewCell.h"
-#import "NoteObject.h"
 
 @interface NoteDataSource ()
 {
@@ -97,7 +96,7 @@
     NSDate *date =[NSDate date];
     NSString *dateString = [format stringFromDate:date];
     note.date = dateString;
-    //[[DatabaseHelper instance] updateNote:note];
+    [[DatabaseHelper instance] updateNote:note];
 }
 
 - (void)addNewItem

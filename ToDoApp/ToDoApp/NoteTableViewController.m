@@ -25,21 +25,17 @@ const CGFloat kPerspective = 1.0/400.0;
 
 @interface NoteTableViewController (){
 
+    id<ExternTabelDataSource> dataSource;
+    NSMutableArray* dataSourceStack;
+    
     NSIndexPath* edetingIndexpath;
     CGFloat height;
     CGPoint originalOffset;
     NSIndexPath* newRow;
-    
-    id<ExternTabelDataSource> externTableDataSource;
-    NSMutableArray* dataSourceStack;
-    NSMutableArray *arrDataSource;
-    
     BOOL isDraging;
     
     UIView *scrollToBackView;
-    
     UIImageView* curentPresentation;
-    NSMutableData *topAppsString;
 }
 
 @property (strong, nonatomic) IBOutlet UITableView *tabelView;
@@ -53,159 +49,12 @@ const CGFloat kPerspective = 1.0/400.0;
 @property (weak, nonatomic) IBOutlet UINavigationItem *titleItem;
 @property (weak, nonatomic) IBOutlet UIView *tableViewContainer;
 
-
+@property (nonatomic) NSInteger groupID;
+@property (nonatomic) NSString *groupName;
+@property (nonatomic) NSIndexPath *indexPath;
 @end
 
 @implementation NoteTableViewController
-//@synthesize headerView, headerImageView, headerLabel;
-//@synthesize footerView, footerImageView, footerLabel;
-//@synthesize verticalSwipeScrollView, appData, startIndex;
-//@synthesize previousPage, nextPage;
-//
-//- (void)viewWillAppear:(BOOL)animated {
-//    
-//    
-//    NSLog(@"frame :%f", self.view.frame.size.height);
-//    NSLog(@"frame :%f", self.view.frame.size.width);
-//    NSLog(@"header :%f", headerView.frame.size.height);
-//    NSLog(@"footer :%f", footerView.frame.size.height);
-//    
-//    self.verticalSwipeScrollView = [[VerticalSwipeScrollView alloc] initWithFrame:self.view.frame headerView:headerView footerView:footerView startingAt:1 delegate:self];
-//    [self.view addSubview:verticalSwipeScrollView];
-//}
-//
-//- (void)viewDidLoad
-//{
-//    headerImageView.transform = CGAffineTransformMakeRotation(degreesToRadians(180));
-//    self.appData = [[NSArray alloc] initWithObjects:@"introduce1@2x.png", @"introduce2@2x.png", @"introduce3@2x.png", @"introduce4@2x.png", nil];
-//    data = [[NSArray alloc]initWithObjects:@"PullArrow@2x.png",@"PullArrow@2x.png", nil];
-//    headerImageView.image = [UIImage imageNamed:[data objectAtIndex:0]];
-//    footerImageView.image =[UIImage imageNamed:[data objectAtIndex:0]];
-//}
-//
-//- (void) rotateImageView:(UIImageView*)imageView angle:(CGFloat)angle
-//{
-//    NSLog(@"height view :%f",self.view.bounds.size.height);
-//    [UIView beginAnimations:nil context:nil];
-//    [UIView setAnimationDuration:0.2];
-//    imageView.transform = CGAffineTransformMakeRotation(degreesToRadians(angle));
-//    [UIView commitAnimations];
-//}
-//
-//# pragma mark VerticalSwipeScrollViewDelegate
-//
-//-(void) headerLoadedInScrollView:(VerticalSwipeScrollView*)scrollView
-//{
-//    [self rotateImageView:headerImageView angle:0];
-//}
-//
-//-(void) headerUnloadedInScrollView:(VerticalSwipeScrollView*)scrollView
-//{
-//    [self rotateImageView:headerImageView angle:180];
-//}
-//
-//-(void) footerLoadedInScrollView:(VerticalSwipeScrollView*)scrollView
-//{
-//    [self rotateImageView:footerImageView angle:180];
-//}
-//
-//-(void) footerUnloadedInScrollView:(VerticalSwipeScrollView*)scrollView
-//{
-//    [self rotateImageView:footerImageView angle:0];
-//}
-//
-//-(UIImageView*) viewForScrollView:(VerticalSwipeScrollView*)scrollView atPage:(NSUInteger)page
-//{
-////    UIWebView* webView = nil;
-////    
-////    if (page < scrollView.currentPageIndex)
-////        webView = [[previousPage retain] autorelease];
-////    else if (page > scrollView.currentPageIndex)
-////        webView = [[nextPage retain] autorelease];
-////    
-////    if (!webView)
-////        webView = [self createWebViewForIndex:page];
-////    
-////    self.previousPage = page > 0 ? [self createWebViewForIndex:page-1] : nil;
-////    self.nextPage = (page == (appData.count-1)) ? nil : [self createWebViewForIndex:page+1];
-////    
-////    self.navigationItem.title = [[[appData objectAtIndex:page] objectForKey:@"im:name"] objectForKey:@"label"];
-////    if (page > 0)
-////        headerLabel.text = [[[appData objectAtIndex:page-1] objectForKey:@"im:name"] objectForKey:@"label"];
-////    if (page != appData.count-1)
-////        footerLabel.text = [[[appData objectAtIndex:page+1] objectForKey:@"im:name"] objectForKey:@"label"];
-////    
-////    return webView;
-//    UIImageView *imageview;
-//    if (!imageview)
-//              imageview = [self createWebViewForIndex:page];
-//    self.previousPage = page > 0 ? [self createWebViewForIndex:page-1] : nil;
-//     self.nextPage = (page == (appData.count-1)) ? nil : [self createWebViewForIndex:page+1];
-//    
-//    if (page > 0)
-//        headerLabel.text = @"1";
-//    if (page != appData.count-1)
-//        footerLabel.text = @"2";
-//
-//    
-//    return imageview;
-//}
-//
-//-(NSUInteger) pageCount
-//{
-//    return appData.count;
-//}
-//
-//-(UIImageView*) createWebViewForIndex:(NSUInteger)index
-//{
-////    UIWebView* webView = [[[UIWebView alloc] initWithFrame:self.view.frame] autorelease];
-////    webView.opaque = NO;
-////    [webView setBackgroundColor:[UIColor clearColor]];
-////    [self hideGradientBackground:webView];
-////    
-////    NSString* htmlFile = [[[NSBundle mainBundle] bundlePath] stringByAppendingString:@"/DetailView.html"];
-////    NSString* htmlString = [NSString stringWithContentsOfFile:htmlFile encoding:NSUTF8StringEncoding error:nil];
-////    htmlString = [htmlString stringByReplacingOccurrencesOfString:@"<!-- title -->" withString:[[[appData objectAtIndex:index] objectForKey:@"im:name"] objectForKey:@"label"]];
-////    htmlString = [htmlString stringByReplacingOccurrencesOfString:@"<!-- icon -->" withString:[[[[appData objectAtIndex:index] objectForKey:@"im:image"] objectAtIndex:0] objectForKey:@"label"]];
-////    htmlString = [htmlString stringByReplacingOccurrencesOfString:@"<!-- content -->" withString:[[[appData objectAtIndex:index] objectForKey:@"summary"] objectForKey:@"label"]];
-////    [webView loadHTMLString:htmlString baseURL:nil];
-////    
-////    return webView;
-//    UIImageView *view = [[UIImageView alloc] initWithFrame:self.view.frame];
-////    CGFloat red = arc4random() / (CGFloat)INT_MAX;
-////    CGFloat green = arc4random() / (CGFloat)INT_MAX;
-////    CGFloat blue = arc4random() / (CGFloat)INT_MAX;
-////    view.backgroundColor = [UIColor colorWithRed:red
-////                                           green:green
-////                                            blue:blue
-////                                           alpha:1.0];
-//    view.image = [UIImage imageNamed:[appData objectAtIndex:index]];
-//    return view;
-//}
-//
-//- (void) hideGradientBackground:(UIView*)theView
-//{
-//    for (UIView * subview in theView.subviews)
-//    {
-//        if ([subview isKindOfClass:[UIImageView class]])
-//            subview.hidden = YES;
-//        
-//        [self hideGradientBackground:subview];
-//    }
-//}
-//
-//- (void)viewDidUnload
-//{
-//    self.headerView = nil;
-//    self.headerImageView = nil;
-//    self.headerLabel = nil;
-//    
-//    self.footerView = nil;
-//    self.footerImageView = nil;
-//    self.footerLabel = nil;
-//}
-
-
 - (UIBarPosition)positionForBar:(id<UIBarPositioning>)bar
 {
     return UIBarPositionTopAttached;
@@ -216,17 +65,21 @@ const CGFloat kPerspective = 1.0/400.0;
 {
     [super viewDidLoad];
     
-    self.tabelView.contentInset = UIEdgeInsetsMake(44, 0, 0, 0);
+   // [self.navigationBar setTitleVerticalPositionAdjustment:10 forBarMetrics:UIBarMetricsDefault];
+    
+    self.tabelView.contentInset = UIEdgeInsetsMake(30, 0, 0, 0);
+    
     dataSourceStack = [NSMutableArray array];
     
-    externTableDataSource = [NoteGroupDataSource new];
-    [externTableDataSource setContent:[[DatabaseHelper instance] getNodeGropus] ];
-    [externTableDataSource setDelegate:self];
-    [dataSourceStack addObject:externTableDataSource];
-
+    dataSource = [NoteGroupDataSource new];
+    [dataSource setContent:[[DatabaseHelper instance] getNodeGropus] ];
+    [dataSource setDelegate:self];
+    [dataSourceStack addObject:dataSource];
+    //_content = [[[DatabaseHelper instance] getNodesForGroup:0] mutableCopy];
+    
     [self setEditingCellViewShow:NO];
     
-    scrollToBackView = [[UIView alloc] initWithFrame:CGRectMake(0, -SCROLLTOBACK_HEIGHT/2, self.tabelView.frame.size.width, SCROLLTOBACK_HEIGHT)];
+    scrollToBackView = [[UIView alloc] initWithFrame:CGRectMake(0, -50, self.tabelView.frame.size.width, SCROLLTOBACK_HEIGHT)];
     scrollToBackView.backgroundColor = [UIColor colorWithRed:1 green:1 blue:1 alpha:0.1];
     UILabel* label = [[UILabel alloc] initWithFrame:scrollToBackView.bounds];
     label.text = @"Switch to list";
@@ -235,48 +88,44 @@ const CGFloat kPerspective = 1.0/400.0;
     label.textAlignment = NSTextAlignmentCenter;
     [scrollToBackView addSubview:label];
     scrollToBackView.alpha = 0.0;
-    scrollToBackView.layer.anchorPoint = CGPointMake(0.5, 1.0);
+   // scrollToBackView.layer.anchorPoint = CGPointMake(0.5, 1.0);
     [self.tabelView addSubview:scrollToBackView];
+    
+    [self createHeaderView:_headerView];
 }
 
-- (void) initDataNote {
-    void(^successBlock)(ResponseObject *) = ^void(ResponseObject *responseObject) {
-        
-        if ([[NSString stringWithFormat:@"%@",[responseObject.data objectForKey:KEY_CODE]] isEqualToString:@"0"]) {
-        } else {
-            NSString *message = [responseObject.data objectForKey:KEY_MESSAGE];
-            [Util showAlert:ALERT_ERROR message:message delegate:self];
-        }
-        [[Util sharedUtil] hideLoadingView];
-        
-    };
-    void(^failBlock)(ResponseObject *) = ^void(ResponseObject *responseObject) {
-        [Util showAlertError:ALERT_NETWORK_ERROR];
-        [[Util sharedUtil] hideLoadingView];
-    };
-    
-    [[Util sharedUtil] showLoadingView];
-    [[APIClient sharedClient] getListNote:@"" success:successBlock
-                                  failure:failBlock];
-}
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
 
+- (void)createHeaderView:(UIView*)headerView {
+    _headerView = [[UIView alloc] initWithFrame:CGRectMake(0, self.tabelView.frame.size.height, 320, 50)];
+    _headerView.backgroundColor = [UIColor colorWithRed:1 green:1 blue:1 alpha:0.1];
+    [self.tabelView addSubview:_headerView];
+    
+    UILabel* labelHeader = [[UILabel alloc] initWithFrame:_headerView.bounds];
+    labelHeader.text = @"Switch to list";
+    labelHeader.textColor = [UIColor whiteColor];
+    labelHeader.backgroundColor = _headerView.backgroundColor;
+    labelHeader.textAlignment = NSTextAlignmentCenter;
+    [_headerView addSubview:labelHeader];
+}
+
+
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
     
-    return [externTableDataSource numberOfSectionsInTableView:tableView];
+    return [dataSource numberOfSectionsInTableView:tableView];
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     
-    return [externTableDataSource tableView:tableView numberOfRowsInSection:section];
+    return [dataSource tableView:tableView numberOfRowsInSection:section];
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -285,13 +134,13 @@ const CGFloat kPerspective = 1.0/400.0;
     {
         return height;
     }
-    return [externTableDataSource tableView:tableView heightForRowAtIndexPath:indexPath];
+    return [dataSource tableView:tableView heightForRowAtIndexPath:indexPath];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     
-    UITableViewCell<EditTabelCellProtocol>* cell = [externTableDataSource tableView:tableView cellForRowAtIndexPath:indexPath];
+    UITableViewCell<EditTabelCellProtocol>* cell = [dataSource tableView:tableView cellForRowAtIndexPath:indexPath];
     cell.backgroundColor = [UIColor blackColor];
     //[cell updateBackgroupd:[dataSource colorFoIndex:indexPath.row]];
     
@@ -305,7 +154,7 @@ const CGFloat kPerspective = 1.0/400.0;
         
         __block UITableViewCell<EditTabelCellProtocol>* blockCell = cell;
         __block NSIndexPath* blockIndexPath = indexPath;
-        [UIView animateWithDuration:0.2 animations:^{
+        [UIView animateWithDuration:0.5 animations:^{
             cell.contentView.layer.transform = CATransform3DRotate(transform, 0, 1, 0, 0);
         } completion:^(BOOL finished) {
             [self cellBiginEditing:blockCell:NO];
@@ -335,6 +184,7 @@ const CGFloat kPerspective = 1.0/400.0;
     
     CGRect rect = cell.frame;
     rect.origin.y -=  self.tabelView.contentOffset.y;
+    NSLog(@"origin y:%f",rect.origin.y);
     height = rect.size.height;
     self.editCellView.frame = rect;
     [UIView beginAnimations:@"show/hide" context:nil];
@@ -350,8 +200,6 @@ const CGFloat kPerspective = 1.0/400.0;
         rect.size.height = 44;
         rect.size.width = 306;
         self.editCellTextField.frame = rect;
-        
-        
     }
     
     self.timeDate.frame = CGRectMake(10, 44, 300, 20);
@@ -385,12 +233,12 @@ const CGFloat kPerspective = 1.0/400.0;
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    [externTableDataSource tableView:tableView didSelectRowAtIndexPath:indexPath];
+    [dataSource tableView:tableView didSelectRowAtIndexPath:indexPath];
 }
 
 - (void)textViewDidChange:(UITextView *)textView
 {
-    [externTableDataSource setNewName:textView.text forIndex:edetingIndexpath.row];
+    [dataSource setNewName:textView.text forIndex:edetingIndexpath.row];
     CGRect rect = self.editCellView.frame;
     rect.size.height = textView.contentSize.height;
     if(rect.size.height<44)
@@ -399,8 +247,8 @@ const CGFloat kPerspective = 1.0/400.0;
     }
     if(fabs(height-rect.size.height)>10)
     {
-        self.editCellView.frame = rect;
-        height = rect.size.height;
+        //        self.editCellView.frame = rect;
+        //        height = rect.size.height;
     }
     
     [self.tabelView reloadRowsAtIndexPaths:@[edetingIndexpath] withRowAnimation:UITableViewRowAnimationNone];
@@ -409,7 +257,7 @@ const CGFloat kPerspective = 1.0/400.0;
 - (void)textViewDidEndEditing:(UITextView *)textView
 {
     self.timeDate.hidden = YES;
-    [externTableDataSource setNewName:textView.text forIndex:edetingIndexpath.row];
+    [dataSource setNewName:textView.text forIndex:edetingIndexpath.row];
     
     NSIndexPath *path = edetingIndexpath;
     
@@ -419,7 +267,9 @@ const CGFloat kPerspective = 1.0/400.0;
     CGRect rect = self.editCellView.frame;
     rect.origin.y += self.tabelView.contentOffset.y-originalOffset.y;
     self.editCellView.frame = rect;
-    self.tabelView.contentInset = self.tabelView.scrollIndicatorInsets;
+    //self.tabelView.contentInset = self.tabelView.scrollIndicatorInsets;
+   // self.tabelView.contentInset = CGPointMake(0, 0);
+
     [UIView commitAnimations];
     
     
@@ -439,12 +289,16 @@ const CGFloat kPerspective = 1.0/400.0;
 
 - (void)openNotesForGroup:(NSInteger)groupID groupName:(NSString*)name indexPath:(NSIndexPath*)indexPath
 {
+    self.groupID = groupID;
+    self.groupName = name;
+    self.indexPath = indexPath;
     
     scrollToBackView.alpha = 0.0;
     CGPoint offset = self.tabelView.contentOffset;
+    
     self.tabelView.contentOffset = CGPointMake(0, -self.tabelView.contentInset.top);
     CGSize size = self.tabelView.contentSize;
-    
+
     CGRect originFrame = self.tabelView.frame;
     if(size.height>self.tabelView.bounds.size.height)
     {
@@ -454,6 +308,7 @@ const CGFloat kPerspective = 1.0/400.0;
     }
     
     UIGraphicsBeginImageContextWithOptions(size, self.tabelView.opaque, 0.0);
+    
     [self.tabelView.layer renderInContext:UIGraphicsGetCurrentContext()];
     
     UIImage * img = UIGraphicsGetImageFromCurrentImageContext();
@@ -467,10 +322,10 @@ const CGFloat kPerspective = 1.0/400.0;
     curentPresentation = [[UIImageView alloc] initWithImage:img];
     
     CGRect rect = curentPresentation.frame;
-    rect.origin.y = -TOP_TABELVIEW_OFFSET-rect.size.height;
+    rect.origin.y = -64-rect.size.height;
     curentPresentation.frame = rect;
     [self.tabelView addSubview:curentPresentation];
-    [externTableDataSource setPresentationImage:curentPresentation];
+    [dataSource setPresentationImage:curentPresentation];
     
     NoteDataSource* newDataSource = [NoteDataSource new];
     newDataSource.groupID = groupID;
@@ -478,12 +333,12 @@ const CGFloat kPerspective = 1.0/400.0;
     NSArray* newContent = [[DatabaseHelper instance] getNodesForGroup:groupID];
     [newDataSource setContent:newContent];
     [dataSourceStack addObject:newContent];
-//    
+    
     [self.titleItem setTitle:name];
     
     [self.tabelView beginUpdates];
     int index = 0;
-    NSArray *content = [externTableDataSource getContent];
+    NSArray *content = [dataSource getContent];
     NSMutableArray* changeRow = [NSMutableArray arrayWithCapacity:content.count];
     for (; index<indexPath.row; index++) {
         [changeRow addObject:[NSIndexPath indexPathForRow:index inSection:0]];
@@ -511,14 +366,14 @@ const CGFloat kPerspective = 1.0/400.0;
     }
     
     [self.tabelView insertRowsAtIndexPaths:changeRow withRowAnimation:UITableViewRowAnimationFade];
-    externTableDataSource = newDataSource;
+    dataSource = newDataSource;
     
     [self.tabelView endUpdates];
 }
 
 - (IBAction)addNewRow:(id)sender
 {
-    [externTableDataSource addNewItem];
+    [dataSource addNewItem];
     
     NSArray* array = [self.tabelView visibleCells];
     // NSLog(@"%@",array);
@@ -533,24 +388,24 @@ const CGFloat kPerspective = 1.0/400.0;
     [self.tabelView scrollToRowAtIndexPath:index atScrollPosition:UITableViewScrollPositionTop animated:YES];
 }
 
+#pragma mark - UIScrollView Delegate
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView
 {
-    
+  //NSLog(@"content offset y:%f",self.tabelView.contentOffset.y);
 }
 
 - (void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate
 {
-    NSLog(@"toa do y: %f", scrollView.contentOffset.y);
-    if(dataSourceStack.count<2)
-        return;
-    if((-scrollView.contentInset.top-scrollView.contentOffset.y)>SCROLLTOBACK_HEIGHT)
-    {
+    // NSLog(@"content inset top y:%f",scrollView.contentInset.top);
+//    if(dataSourceStack.count<2)
+//        return;
+   
+    if((-scrollView.contentInset.top-scrollView.contentOffset.y)>SCROLLTOBACK_HEIGHT) {
         
         UIGraphicsBeginImageContextWithOptions(self.tableViewContainer.bounds.size, self.tableViewContainer.opaque, 0.0);
         [self.tableViewContainer.layer renderInContext:UIGraphicsGetCurrentContext()];
         
         UIImage * img = UIGraphicsGetImageFromCurrentImageContext();
-        img = [UIImage imageNamed:@"PullArrow.png"];
         
         UIGraphicsEndImageContext();
         __block UIImageView *iv = [[UIImageView alloc] initWithImage:img];
@@ -564,13 +419,12 @@ const CGFloat kPerspective = 1.0/400.0;
             rect.origin.y -= curentPresentation.frame.origin.y - self.navigationBar.frame.size.height;
             iv.frame = rect;
             rect = curentPresentation.frame;
-            rect.origin.y = self.navigationBar.frame.size.height;
+            rect.origin.y = self.navigationBar.frame.size.height ;
             curentPresentation.frame = rect;
-            
-            [self.titleItem setTitle:@""];
+            [self.titleItem setTitle:@"My Lists"];
         } completion:^(BOOL finished) {
             [dataSourceStack removeLastObject];
-            externTableDataSource = [dataSourceStack lastObject];
+            dataSource = [dataSourceStack lastObject];
             
             [self.tabelView reloadData];
             [iv removeFromSuperview];
@@ -579,15 +433,21 @@ const CGFloat kPerspective = 1.0/400.0;
             if(dataSourceStack.count>1)
             {
                 scrollToBackView.alpha = 1.0;
-            }else
+            } else
             {
                 scrollToBackView.alpha = 0.0;
                 
             }
             
         }];
-
+        return;
+    } else if (self.tabelView.contentOffset.y > 40) {
+       
+    } else {
+         NSLog(@"Switch");
     }
-}
+//    } else if((-scrollView.contentInset.top+scrollView.contentOffset.y)>50) {
+//    }
 
+}
 @end

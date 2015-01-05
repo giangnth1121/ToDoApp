@@ -11,7 +11,7 @@
 
 @protocol ExternTabelDataSource <NSObject,UITableViewDataSource, UITableViewDelegate>
 - (void)setColorForView:(GradientBackground*)backGround inIndex:(NSInteger)index;
-- (void)setContent:(NSMutableArray*)content;
+- (void)setContent:(NSArray*)content;
 - (void)setNewName:(NSString*)name forIndex:(NSInteger)index;
 - (void)addNewItem;
 - (void)setDelegate:(id)delegate;
